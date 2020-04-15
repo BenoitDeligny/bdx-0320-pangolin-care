@@ -8,16 +8,18 @@ import { ServerAnswer } from '../models/server-answer';
 })
 export class ResearchService {
 
-  testingUrl = '';
+  animalDetailsURL = '';
+  animalCountriesURL = '';
 
   constructor(private http: HttpClient) { }
 
 
   getAnimal(): Observable<ServerAnswer> {
-    return this.http.get<ServerAnswer>(this.testingUrl);
+    return this.http.get<ServerAnswer>(this.animalDetailsURL);
   }
 
   request(term: string) {
-    this.testingUrl = `https://apiv3.iucnredlist.org/api/v3/species/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
+    this.animalDetailsURL = `https://apiv3.iucnredlist.org/api/v3/species/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
+    this.animalCountriesURL = `https://apiv3.iucnredlist.org/api/v3/species/countries/name/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
   }
 }

@@ -7,4 +7,5 @@ export class Animal {
     'main_common_name': string;
     category: string;
     'population_trend': string;
+    countries: countryList[];
 }
