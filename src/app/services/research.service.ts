@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Animal } from '../models/animal';
 
@@ -8,7 +8,7 @@ import { Animal } from '../models/animal';
 })
 export class ResearchService {
 
-  constructor(private http: HttpClientModule) { }
+  constructor(private http: HttpClient) { }
 
 
   getAnimal(): Observable<Animal> {

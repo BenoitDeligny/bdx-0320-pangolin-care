@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Animal } from '../models/animal';
+import { ResearchService } from '../services/research.service';
 
 @Component({
   selector: 'pgc-search',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  testingAnimal: Animal = new Animal();
+
+  constructor(private researchService: ResearchService) { }
 
   ngOnInit(): void {
+    this.researchService.getAnimal().subscribe(
+      (animalFromServer: Animal) => {
+        this.testingAnimal = animalFromServer;
+      }
+    );
   }
 
 }
