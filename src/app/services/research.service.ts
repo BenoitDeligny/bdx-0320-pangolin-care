@@ -8,12 +8,16 @@ import { ServerAnswer } from '../models/server-answer';
 })
 export class ResearchService {
 
-  testingUrl = 'https://apiv3.iucnredlist.org/api/v3/species/panthera%20leo?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee';
+  testingUrl = '';
 
   constructor(private http: HttpClient) { }
 
 
   getAnimal(): Observable<ServerAnswer> {
     return this.http.get<ServerAnswer>(this.testingUrl);
+  }
+
+  request(term: string) {
+    this.testingUrl = `https://apiv3.iucnredlist.org/api/v3/species/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
   }
 }

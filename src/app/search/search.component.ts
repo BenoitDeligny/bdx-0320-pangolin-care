@@ -16,18 +16,15 @@ export class SearchComponent implements OnInit {
   constructor(private researchService: ResearchService) { }
 
   ngOnInit(): void {
-    this.researchService.getAnimal().subscribe(
-      (animalFromServer: ServerAnswer) => {
-        this.myAnimals = animalFromServer.result;
-        console.log(animalFromServer);
-        console.log(animalFromServer.name);
-        console.log(this.myAnimals);
-      }
-    );
   }
 
   sendRequest() {
     this.researchService.request(this.term);
+    this.researchService.getAnimal().subscribe(
+      (animalFromServer: ServerAnswer) => {
+        this.myAnimals = animalFromServer.result;
+      }
+    );
   }
 
 }
