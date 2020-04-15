@@ -4,7 +4,6 @@ footer{
   margin-bottom: 0;
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
   background-color: var(--mainColor);
 }
 
@@ -19,7 +18,7 @@ footer{
   align-items: center;
 }
 
-footer p:hover{
+footer a:hover{
   color: var(--thirdColor);
   cursor: pointer;
 }
