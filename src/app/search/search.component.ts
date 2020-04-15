@@ -23,7 +23,8 @@ export class SearchComponent implements OnInit {
   sendRequest() {
     this.researchService.request(this.term);
 
-    this.researchService.getAnimalDetails().subscribe(
+
+    /* this.researchService.getAnimalDetails().subscribe(
       (animalFromServer: AnimalDetailsAnswer) => {
         this.myAnimal = animalFromServer.result;
       }
@@ -33,7 +34,7 @@ export class SearchComponent implements OnInit {
       (countryListFromServer: AnimalCountriesAnswer) => {
         this.myAnimalCountries = countryListFromServer.result;
       }
-    );
+    ); */
   }
 
 }
