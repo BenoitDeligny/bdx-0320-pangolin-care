@@ -10,6 +10,7 @@ import { ServerAnswer } from '../models/server-answer';
 })
 export class SearchComponent implements OnInit {
 
+  term = '';
   myAnimals: Animal[] = [];
 
   constructor(private researchService: ResearchService) { }
@@ -23,6 +24,10 @@ export class SearchComponent implements OnInit {
         console.log(this.myAnimals);
       }
     );
+  }
+
+  sendRequest() {
+    this.researchService.request(this.term);
   }
 
 }

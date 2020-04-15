@@ -1,4 +1,8 @@
-<p>Test</p>
+<div>
+    <input type="text" [(ngModel)]="term">
+    <button type="submit" (click)="sendRequest()">Submit</button>
+</div>
+
 <p *ngFor="let animal of myAnimals">
     ID: {{animal.taxonid}} <br>
     Scientific Name: {{animal.scientific_name}} <br>
