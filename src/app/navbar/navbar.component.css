@@ -1,20 +1,24 @@
 .navbar{
     display: flex;
-    border: 1px solid black;
     width: 50%;
     height: 40px;
     justify-content: space-around;
     align-items: center;
+    background-color: var(--mainColor);
+    border-radius: 3px;
 }
 
 .menu-link{
-  width: 33%;
+  width: 33.3%;
   height: 100%;
-  border: 1px solid black;
-  text-align: center;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-link:hover{
   background-color: var(--thirdColor);
   color: whitesmoke;
+  cursor: pointer;
 }
