@@ -1,5 +1,3 @@
-import { CountryList } from './country-list';
-
 export class Animal {
     taxonid: number;
     'scientific_name': string;

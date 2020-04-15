@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Animal } from '../models/animal';
 import { ResearchService } from '../services/research.service';
 import { AnimalDetailsAnswer, AnimalCountriesAnswer } from '../models/server-answers';
-import { CountryList } from '../models/country-list';
+import { Country } from '../models/country-list';
 
 @Component({
   selector: 'pgc-search',
@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
 
   term = '';
   myAnimal: Animal[] = [];
-  myAnimalCountries: CountryList[] = [];
+  myAnimalCountries: Country[] = [];
 
   constructor(private researchService: ResearchService) { }
 

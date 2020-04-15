@@ -1,4 +1,4 @@
-export class CountryList {
+export class Country {
     code: string;
     country: string;
 }
