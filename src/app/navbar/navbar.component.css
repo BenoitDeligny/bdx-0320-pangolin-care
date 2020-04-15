@@ -1,0 +1,20 @@
+.navbar{
+    display: flex;
+    border: 1px solid black;
+    width: 50%;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-link{
+  width: 33%;
+  height: 100%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.menu-link:hover{
+  background-color: var(--thirdColor);
+  color: whitesmoke;
+}

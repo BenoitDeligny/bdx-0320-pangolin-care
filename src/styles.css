@@ -1,18 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-mainColor {
+:root {
   --mainColor: #E8C682;
 }
 
-secondColor {
+:root {
   --secondColor: #69645A;
 }
 
-thirdColor {
+:root {
   --thirdColor: #166B00;
 }
 
-policeColor {
+:root {
   --policeColor: white;
 }
 
