@@ -1,17 +1,10 @@
 export class Animal {
-    'taxonid': number;
+    taxonid: number;
     'scientific_name': string;
-    'kingdom': string;
-    'phylum': string;
-    'class': string;
-    'order': string;
-    'family': string;
-    'genus': string;
+    class: string;
+    order: string;
+    family: string;
     'main_common_name': string;
-    'category': string;
-    'criteria': string;
+    category: string;
     'population_trend': string;
-    'marine_system': boolean;
-    'freshwater_system': boolean;
-    'terrestrial_system': boolean;
 }
