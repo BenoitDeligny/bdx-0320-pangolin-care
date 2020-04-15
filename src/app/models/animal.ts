@@ -1,3 +1,5 @@
+import { CountryList } from './country-list';
+
 export class Animal {
     taxonid: number;
     'scientific_name': string;
@@ -7,5 +9,4 @@ export class Animal {
     'main_common_name': string;
     category: string;
     'population_trend': string;
-    countries: countryList[];
 }

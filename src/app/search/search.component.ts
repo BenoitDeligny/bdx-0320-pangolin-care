@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from '../models/animal';
 import { ResearchService } from '../services/research.service';
-import { ServerAnswer } from '../models/server-answer';
+import { AnimalDetailsAnswer, AnimalCountriesAnswer } from '../models/server-answers';
+import { CountryList } from '../models/country-list';
 
 @Component({
   selector: 'pgc-search',
@@ -11,7 +12,8 @@ import { ServerAnswer } from '../models/server-answer';
 export class SearchComponent implements OnInit {
 
   term = '';
-  myAnimals: Animal[] = [];
+  myAnimal: Animal[] = [];
+  myAnimalCountries: CountryList[] = [];
 
   constructor(private researchService: ResearchService) { }
 
@@ -20,9 +22,16 @@ export class SearchComponent implements OnInit {
 
   sendRequest() {
     this.researchService.request(this.term);
-    this.researchService.getAnimal().subscribe(
-      (animalFromServer: ServerAnswer) => {
-        this.myAnimals = animalFromServer.result;
+
+    this.researchService.getAnimalDetails().subscribe(
+      (animalFromServer: AnimalDetailsAnswer) => {
+        this.myAnimal = animalFromServer.result;
+      }
+    );
+
+    this.researchService.getAnimalCountries().subscribe(
+      (countryListFromServer: AnimalCountriesAnswer) => {
+        this.myAnimalCountries = countryListFromServer.result;
       }
     );
   }

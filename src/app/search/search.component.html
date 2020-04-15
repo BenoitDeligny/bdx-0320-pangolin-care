@@ -3,14 +3,15 @@
     <button type="submit" (click)="sendRequest()">Submit</button>
 </div>
 
-<p *ngFor="let animal of myAnimals">
-    ID: {{animal.taxonid}} <br>
-    Scientific Name: {{animal.scientific_name}} <br>
-    Class: {{animal.class}} <br>
-    Order: {{animal.order}} <br>
-    Family: {{animal.family}} <br>
-    Common Name: {{animal.main_common_name}} <br>
-    Status IUCN: {{animal.category}} <br>
-    Population Trend: {{animal.population_trend}} <br>
-    Countries: {{animal.countries}} <br>
+<p *ngFor="let animalDetails of myAnimal">
+    ID: {{animalDetails.taxonid}} <br>
+    Scientific Name: {{animalDetails.scientific_name}} <br>
+    Class: {{animalDetails.class}} <br>
+    Order: {{animalDetails.order}} <br>
+    Family: {{animalDetails.family}} <br>
+    Common Name: {{animalDetails.main_common_name}} <br>
+    Status IUCN: {{animalDetails.category}} <br>
+    Population Trend: {{animalDetails.population_trend}} <br>
+    Countries:
+    <span *ngFor="let country of myAnimalCountries">-<a routerLink=''>{{country.country}}</a>-</span> 
 </p>

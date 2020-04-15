@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ServerAnswer } from '../models/server-answer';
+import { AnimalDetailsAnswer } from '../models/server-answers';
+import { AnimalCountriesAnswer } from '../models/server-answers';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,12 @@ export class ResearchService {
   constructor(private http: HttpClient) { }
 
 
-  getAnimal(): Observable<ServerAnswer> {
-    return this.http.get<ServerAnswer>(this.animalDetailsURL);
+  getAnimalDetails(): Observable<AnimalDetailsAnswer> {
+    return this.http.get<AnimalDetailsAnswer>(this.animalDetailsURL);
+  }
+
+  getAnimalCountries(): Observable<AnimalCountriesAnswer> {
+    return this.http.get<AnimalCountriesAnswer>(this.animalCountriesURL);
   }
 
   request(term: string) {
