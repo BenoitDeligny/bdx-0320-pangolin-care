@@ -1,23 +1,22 @@
 export class Animal {
-    taxonid: number; // reprendre l'ID de REDLIST UICN ?
-    scentificName: string;
-    class: string; // ex: Mammalia
-    order: string;
-    family: string;
-    genus: string;
-    commonName: string; // African Elephant
-    redListStatus: string;
-    /* or number (0-7)
-    list:
-    DD (DataDeficient = 0),
-    LC (LeastConcern = 1),
-    NT (NearThreatened = 2),
-    VU (VUlnerable = 3),
-    EN (ENdangered = 4),
-    CR (CRiticallyEndangered = 5),
-    EW (ExtinctInTheWild = 6),
-    EX (EXtinct = 7)
-    */
-    populationTrend: string; // boolean ? Decreasing & Increasing
-    system: string; // marine, freshwater ou terrestrial => number de 0 à 2 ?
+    "taxonid": number;
+    "scientific_name": string;
+    "kingdom": string;
+    "phylum": string;
+    "class": string;
+    "order": string;
+    "family": string;
+    "genus": string;
+    "main_common_name": string;
+    "authority": string;
+    "published_year": number;
+    "assessment_date": string;
+    "category": string;
+    "criteria": string;
+    "population_trend": string;
+    "marine_system": boolean;
+    "freshwater_system": boolean;
+    "terrestrial_system": boolean;
+    "assessor": string;
+    "reviewer": string;
 }
