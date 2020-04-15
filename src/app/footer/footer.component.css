@@ -1,0 +1,24 @@
+footer{
+  height: 10%;
+  width: 100%;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--mainColor);
+}
+
+.left-foot{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.right-foot{
+  display: flex;
+  align-items: center;
+}
+
+footer a:hover{
+  color: var(--thirdColor);
+  cursor: pointer;
+}
