@@ -19,7 +19,7 @@ import { AnimalpageComponent } from './animalpage/animalpage.component';
     HomepageComponent,
     FooterComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
     SearchComponent,
     AnimalpageComponent
 
