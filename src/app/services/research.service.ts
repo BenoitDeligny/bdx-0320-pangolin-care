@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AnimalDetailsAnswer, AnimalByCountryAnswer} from '../models/server-answers';
-import { AnimalCountriesAnswer } from '../models/server-answers';
+import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
+import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
+import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,26 +13,28 @@ export class ResearchService {
 
   constructor(private http: HttpClient) { }
 
+  BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
+  TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
+
   animalByCountryURL = '';
   animalDetailsURL = '';
   animalCountriesURL = '';
 
-  getAnimalByCountry(): Observable<AnimalByCountryAnswer> {
+  getAnimalByCountry(criteria: string): Observable<AnimalByCountryAnswer> {
+    this.animalByCountryURL = this.BASE_URL + `country/getspecies/${criteria}` + this.TOKEN;
     return this.http.get<AnimalByCountryAnswer>(this.animalByCountryURL);
   }
 
-  getAnimalDetails(): Observable<AnimalDetailsAnswer> {
+  getAnimalDetails(criteria: string): Observable<AnimalDetailsAnswer> {
+    this.animalDetailsURL = this.BASE_URL + `species/${criteria}` + this.TOKEN;
     return this.http.get<AnimalDetailsAnswer>(this.animalDetailsURL);
   }
 
-  getAnimalCountries(): Observable<AnimalCountriesAnswer> {
+  getAnimalCountries(criteria: string): Observable<AnimalCountriesAnswer> {
+    this.animalCountriesURL = this.BASE_URL + `species/countries/name/${criteria}` + this.TOKEN;
     return this.http.get<AnimalCountriesAnswer>(this.animalCountriesURL);
   }
 
-  request(term: string) {
-  this.animalByCountryURL = `https://apiv3.iucnredlist.org/api/v3/country/getspecies/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
-  console.log(`https://apiv3.iucnredlist.org/api/v3/country/getspecies/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`);
-  this.animalDetailsURL = `https://apiv3.iucnredlist.org/api/v3/species/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
-  this.animalCountriesURL = `https://apiv3.iucnredlist.org/api/v3/species/countries/name/${term}?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
+  request(criteria: string) {
 }
 }
