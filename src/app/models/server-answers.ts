@@ -12,3 +12,9 @@ export class AnimalCountriesAnswer {
     constructor(public name: string, public count: number, public result: Country[]) {
     }
 }
+
+export class AnimalByCountryAnswer {
+
+    constructor(public result: Animal[]) {
+    }
+}

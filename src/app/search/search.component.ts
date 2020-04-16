@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from '../models/animal';
 import { ResearchService } from '../services/research.service';
-import { AnimalDetailsAnswer, AnimalCountriesAnswer } from '../models/server-answers';
+import { AnimalDetailsAnswer, AnimalCountriesAnswer, AnimalByCountryAnswer} from '../models/server-answers';
 import { Country } from '../models/country-list';
 
 @Component({
@@ -12,8 +12,10 @@ import { Country } from '../models/country-list';
 export class SearchComponent implements OnInit {
 
   term = '';
+
   myAnimal: Animal[] = [];
   myAnimalCountries: Country[] = [];
+  animalByCountry: Animal[] = [];
 
   constructor(private researchService: ResearchService) { }
 
@@ -23,8 +25,13 @@ export class SearchComponent implements OnInit {
   sendRequest() {
     this.researchService.request(this.term);
 
+    this.researchService.getAnimalByCountry().subscribe(
+      (animalByCountryFromServer: AnimalByCountryAnswer) => {
+        this.animalByCountry = animalByCountryFromServer.result;
+      }
+    );
 
-    /* this.researchService.getAnimalDetails().subscribe(
+    this.researchService.getAnimalDetails().subscribe(
       (animalFromServer: AnimalDetailsAnswer) => {
         this.myAnimal = animalFromServer.result;
       }
@@ -34,7 +41,7 @@ export class SearchComponent implements OnInit {
       (countryListFromServer: AnimalCountriesAnswer) => {
         this.myAnimalCountries = countryListFromServer.result;
       }
-    ); */
+    );
   }
 
 }

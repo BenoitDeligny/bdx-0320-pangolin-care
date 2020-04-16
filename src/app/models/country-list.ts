@@ -1,4 +1,4 @@
 export class Country {
-    code: string;
-    country: string;
+    isocode: string;
+    countryName: string;
 }

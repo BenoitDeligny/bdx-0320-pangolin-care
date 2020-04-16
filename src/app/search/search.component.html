@@ -1,12 +1,19 @@
 <div>
-    <input type="text" [(ngModel)]="term">
+    <label for="searchInput">Recherche (isocode pays OU nom scientifque de l'animal)</label>
+    <input name="searchInput" type="text" [(ngModel)]="term">
     <button type="submit" (click)="sendRequest()">Submit</button>
 </div>
+<p><em>Liste des isocode par pays</em></p>
 
 
+<p *ngFor="let animal of animalByCountry">
+    <span *ngIf="animal.category === 'CR' || animal.category === 'EW'">
+        -- <a>{{animal.scientific_name}}</a> --
+    </span>
+</p>
 
 
-<!-- <p *ngFor="let animalDetails of myAnimal">
+<p *ngFor="let animalDetails of myAnimal">
     ID: {{animalDetails.taxonid}} <br>
     Scientific Name: {{animalDetails.scientific_name}} <br>
     Class: {{animalDetails.class}} <br>
@@ -17,4 +24,4 @@
     Population Trend: {{animalDetails.population_trend}} <br>
     Countries:
     <span *ngFor="let country of myAnimalCountries">-<a routerLink=''>{{country.country}}</a>-</span> 
-</p> -->
+</p>
