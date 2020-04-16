@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pangoCare"
+    }
+  },
+  "defaultProject": "pangoCare",
+  "cli": {
+    "analytics": "30c17ef8-8e97-4220-8da0-918c618e3ab4"
+  }
 }
