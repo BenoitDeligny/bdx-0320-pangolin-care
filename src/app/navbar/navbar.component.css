@@ -4,8 +4,10 @@
     height: 40px;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--mainColor);
+    background-color: var(--secondColor);
     border-radius: 3px;
+    color: whitesmoke;
+    margin: auto;
 }
 
 .menu-link{

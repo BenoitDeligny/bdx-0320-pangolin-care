@@ -4,7 +4,7 @@ footer{
   margin-bottom: 0;
   display: flex;
   justify-content: space-around;
-  background-color: var(--mainColor);
+  background-color: var(--secondColor);
 }
 
 .left-foot{

@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SearchComponent } from './search/search.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { CountrypageComponent } from './countrypage/countrypage.component';
+import { AnimalpageComponent } from './animalpage/animalpage.component';
 
 
 const routes: Routes = [
-  { path: '', component: SearchComponent},
+  { path: '', component: HomepageComponent},
+  { path: 'home', component: HomepageComponent},
+  { path: 'countries', component: CountrypageComponent},
+  { path: 'animals', component: AnimalpageComponent},
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
