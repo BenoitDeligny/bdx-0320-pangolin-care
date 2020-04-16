@@ -12,6 +12,7 @@ img{
 
 .animal-block{
   display: flex;
+  background-color: var(--secondColor);
 }
 
 .description-block{
