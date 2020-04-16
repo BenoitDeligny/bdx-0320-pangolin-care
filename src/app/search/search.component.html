@@ -1,7 +1,7 @@
 <div class="searchbar-container">
     <label for="searchInput">Recherche (isocode pays OU nom scientifque de l'animal):</label>
     <div class="input-container">
-      <input name="searchInput" type="text" [(ngModel)]="term">
+      <input name="searchInput" type="text" [(ngModel)]="criteria">
       <button type="submit" (click)="sendRequest()">Submit</button>
     </div>
 
@@ -9,7 +9,7 @@
 
 
 <div>
-    <p *ngFor="let animal of animalByCountry">
+    <p *ngFor="let animal of animalsByCountry">
         <span *ngIf="animal.category === 'CR' || animal.category === 'EW'">
             -- {{animal.scientific_name}} --
         </span>
@@ -18,7 +18,7 @@
 
 
 <div>
-    <p *ngFor="let animalDetails of myAnimal">
+    <p *ngFor="let animalDetails of animals">
         ID: {{animalDetails.taxonid}} <br>
         Scientific Name: {{animalDetails.scientific_name}} <br>
         Class: {{animalDetails.class}} <br>
@@ -28,6 +28,6 @@
         Status IUCN: {{animalDetails.category}} <br>
         Population Trend: {{animalDetails.population_trend}} <br>
         Countries:
-        <span *ngFor="let country of myAnimalCountries">-{{country.countryName}}-</span>
+        <span *ngFor="let country of countries">-{{country.country}}-</span>
     </p>
 </div>

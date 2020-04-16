@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from '../models/animal';
 import { ResearchService } from '../services/research.service';
-import { AnimalDetailsAnswer, AnimalCountriesAnswer, AnimalByCountryAnswer} from '../models/server-answers';
 import { Country } from '../models/country-list';
+import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
+import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
+import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 
 @Component({
   selector: 'pgc-search',
@@ -11,11 +13,11 @@ import { Country } from '../models/country-list';
 })
 export class SearchComponent implements OnInit {
 
-  term = '';
+  criteria = '';
 
-  myAnimal: Animal[] = [];
-  myAnimalCountries: Country[] = [];
-  animalByCountry: Animal[] = [];
+  animals: Animal[] = [];
+  countries: Country[] = [];
+  animalsByCountry: Animal[] = [];
 
   constructor(private researchService: ResearchService) { }
 
@@ -23,23 +25,21 @@ export class SearchComponent implements OnInit {
   }
 
   sendRequest() {
-    this.researchService.request(this.term);
-
-    this.researchService.getAnimalByCountry().subscribe(
+    this.researchService.getAnimalByCountry(this.criteria).subscribe(
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
-        this.animalByCountry = animalByCountryFromServer.result;
+        this.animalsByCountry = animalByCountryFromServer.result;
       }
     );
 
-    this.researchService.getAnimalDetails().subscribe(
+    this.researchService.getAnimalDetails(this.criteria).subscribe(
       (animalFromServer: AnimalDetailsAnswer) => {
-        this.myAnimal = animalFromServer.result;
+        this.animals = animalFromServer.result;
       }
     );
 
-    this.researchService.getAnimalCountries().subscribe(
+    this.researchService.getAnimalCountries(this.criteria).subscribe(
       (countryListFromServer: AnimalCountriesAnswer) => {
-        this.myAnimalCountries = countryListFromServer.result;
+        this.countries = countryListFromServer.result;
       }
     );
   }
