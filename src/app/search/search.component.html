@@ -11,7 +11,7 @@
 <div>
     <p *ngFor="let animal of animalByCountry">
         <span *ngIf="animal.category === 'CR' || animal.category === 'EW'">
-            -- <a>{{animal.scientific_name}}</a> --
+            -- {{animal.scientific_name}} --
         </span>
     </p>
 </div>
@@ -28,6 +28,6 @@
         Status IUCN: {{animalDetails.category}} <br>
         Population Trend: {{animalDetails.population_trend}} <br>
         Countries:
-        <span *ngFor="let country of myAnimalCountries">-{{country.country}}-</span>
+        <span *ngFor="let country of myAnimalCountries">-{{country.countryName}}-</span>
     </p>
 </div>
