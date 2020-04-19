@@ -29,27 +29,26 @@ export class SearchComponent implements OnInit {
   }
 
   sendRequest() {
-    for (const country of this.allCountries) {
-      this.allCountries.find(() => {
-        this.criteria = country.isocode;
-      });
+    const testing = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
+    if (testing === undefined) {
+      alert('Pays inconnu');
+      return;
     }
+    this.criteria = testing.isocode;
 
-    console.log(this.criteria);
-
-    this.researchService.getAnimalByCountry(this.criteria).subscribe(
+    this.researchService.getAnimalByCountry(testing.isocode).subscribe(
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
         this.animalsByCountry = animalByCountryFromServer.result;
       }
     );
 
-    this.researchService.getAnimalDetails(this.criteria).subscribe(
+    this.researchService.getAnimalDetails(testing.isocode).subscribe(
       (animalFromServer: AnimalDetailsAnswer) => {
         this.animals = animalFromServer.result;
       }
     );
 
-    this.researchService.getAnimalCountries(this.criteria).subscribe(
+    this.researchService.getAnimalCountries(testing.isocode).subscribe(
       (countryListFromServer: AnimalCountriesAnswer) => {
         this.countries = countryListFromServer.result;
       }
