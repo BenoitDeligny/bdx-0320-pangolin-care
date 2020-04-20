@@ -7,14 +7,15 @@
 
 .countryContainer {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     margin: 20px;
 }
 
 .imgContainer {
-    height: max-content;
-    width: max-content;
+    height: 200px;
+    width: 200px;
 }
 
 .countryDescription {
@@ -37,6 +38,7 @@
 
 .specieImg {
     height: 100px;
+    width: 100px;
 }
 
 .specieDescription p {
