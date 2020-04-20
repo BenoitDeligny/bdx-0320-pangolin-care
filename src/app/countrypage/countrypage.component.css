@@ -1,0 +1,21 @@
+.overallContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.countryContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imgContainer {
+    height: max-content;
+    width: max-content;
+}
+
+.countryDescription {
+    width: 60%;
+}
