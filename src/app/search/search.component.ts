@@ -15,6 +15,8 @@ export class SearchComponent implements OnInit {
 
   criteria = '';
 
+  allCountries: Country[] = [];
+
   animals: Animal[] = [];
   countries: Country[] = [];
   animalsByCountry: Animal[] = [];
@@ -22,22 +24,32 @@ export class SearchComponent implements OnInit {
   constructor(private researchService: ResearchService) { }
 
   ngOnInit(): void {
+    this.researchService.getArrayOfCountries()
+      .subscribe(data => this.allCountries = data);
   }
 
   sendRequest() {
-    this.researchService.getAnimalByCountry(this.criteria).subscribe(
+    const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
+    if (country === undefined) {
+      alert('Pays inconnu');
+      return;
+    }
+
+    // this.criteria = testing.isocode;
+
+    this.researchService.getAnimalByCountry(country.isocode).subscribe(
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
         this.animalsByCountry = animalByCountryFromServer.result;
       }
     );
 
-    this.researchService.getAnimalDetails(this.criteria).subscribe(
+    this.researchService.getAnimalDetails(country.isocode).subscribe(
       (animalFromServer: AnimalDetailsAnswer) => {
         this.animals = animalFromServer.result;
       }
     );
 
-    this.researchService.getAnimalCountries(this.criteria).subscribe(
+    this.researchService.getAnimalCountries(country.isocode).subscribe(
       (countryListFromServer: AnimalCountriesAnswer) => {
         this.countries = countryListFromServer.result;
       }

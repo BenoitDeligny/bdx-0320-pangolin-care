@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 body {
   background-color: var(--mainColor);
 }
@@ -8,41 +9,57 @@ a {
   text-decoration: none;
 }
 
+=======
+>>>>>>> 18e745cae69618a54157bd445a64f63715f2444b
 :root {
-  --mainColor: #E8C682;
+  --mainColor: #166B00;
 }
 
 :root {
-  --secondColor: #69645A;
+  --secondColor: #21555E;
 }
 
 :root {
-  --thirdColor: #166B00;
+  --thirdColor: #69645A;
 }
 
 :root {
   --policeColor: white;
 }
 
+body {
+  background: url(assets/img/dryEarth-wallPaper.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-p {
-  font-size: 1vw;
+
+p, a {
+  font-size: 1.2vw;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
+  text-decoration: none;
 }
 h4 {
   font-size: 1.7vw;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
 }
 h3 {
   font-size: 2.4vw;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
 }
 h2 {
   font-size: 3.1vw;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
 }
 h1 {
   font-size: 3.8vw;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
 }
 

@@ -1,5 +1,5 @@
 <div class="searchbar-container">
-    <label for="searchInput">Recherche (isocode pays OU nom scientifque de l'animal):</label>
+    <label for="searchInput"><p>Recherche (isocode pays OU nom scientifque de l'animal):</p></label>
     <div class="input-container">
       <input name="searchInput" type="text" [(ngModel)]="criteria">
       <button type="submit" (click)="sendRequest()">Submit</button>
@@ -17,7 +17,8 @@
 </div>
 
 
-<div>
+<!-- RECHERCHE PAR PAYS UNIQUEMENT POUR LE MOMENT
+    <div>
     <p *ngFor="let animalDetails of animals">
         ID: {{animalDetails.taxonid}} <br>
         Scientific Name: {{animalDetails.scientific_name}} <br>
@@ -30,4 +31,4 @@
         Countries:
         <span *ngFor="let country of countries">-{{country.country}}-</span>
     </p>
-</div>
+</div> -->
