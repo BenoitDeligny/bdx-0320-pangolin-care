@@ -1,0 +1,44 @@
+.overallContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.countryContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.imgContainer {
+    height: max-content;
+    width: max-content;
+}
+
+.countryDescription {
+    width: 60%;
+}
+
+.speciesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.specie {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.specieImg {
+    height: 100px;
+}
+
+.specieDescription p {
+    margin: 10px;
+}
