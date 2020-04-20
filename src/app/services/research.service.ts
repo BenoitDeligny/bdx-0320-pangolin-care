@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
+import { Country } from '../models/country-list';
 
 
 @Injectable({
@@ -12,6 +13,8 @@ import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 export class ResearchService {
 
   constructor(private http: HttpClient) { }
+
+  allCountriesUrl = 'app/models/isocode-countries.json';
 
   BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
@@ -35,6 +38,7 @@ export class ResearchService {
     return this.http.get<AnimalCountriesAnswer>(this.animalCountriesURL);
   }
 
-  request(criteria: string) {
-}
+  getArrayOfCountries(): Observable<Country[]> {
+    return this.http.get<Country[]>(this.allCountriesUrl);
+  }
 }
