@@ -3,7 +3,7 @@
         <input name="searchInput" type="text" [(ngModel)]="criteria" (keyup)="searchResult()" autofocus>
         <div class="searchResultsContainer">
             <div *ngFor="let searchResult of searchResults" (click)="searchByCountry(searchResult)">
-                <p>{{searchResult.country}}</p>
+                <p [hidden]="isHidden">{{searchResult.country}}</p>
             </div>
         </div>
     </div>

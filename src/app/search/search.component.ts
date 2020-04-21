@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   criteria = '';
+  isHidden = false;
 
   allCountries: Country[] = [];
 
@@ -33,8 +34,11 @@ export class SearchComponent implements OnInit {
 
   searchResult() {
     if (this.criteria.length >= 2) {
+      this.isHidden = false;
       this.searchResults = this.allCountries
         .filter(currentElement => currentElement.country.toUpperCase().includes(this.criteria.toUpperCase().trim()));
+    } else if (this.criteria.length < 2) {
+      this.isHidden = true;
     }
   }
 
@@ -42,6 +46,7 @@ export class SearchComponent implements OnInit {
     this.researchService.getAnimalByCountry(searchCountry.isocode).subscribe(
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
         this.animalsByCountry = animalByCountryFromServer.result;
+        this.criteria = searchCountry.country;
       }
     );
   }
