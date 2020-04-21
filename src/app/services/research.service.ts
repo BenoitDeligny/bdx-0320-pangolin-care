@@ -5,6 +5,8 @@ import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 import { Country } from '../models/country-list';
+import { Description } from '../models/description';
+import { DescriptionAnswer } from '../models/description-answer';
 
 
 @Injectable({
@@ -22,6 +24,7 @@ export class ResearchService {
   animalByCountryURL = '';
   animalDetailsURL = '';
   animalCountriesURL = '';
+  descriptionsURL = '';
 
   getAnimalByCountry(criteria: string): Observable<AnimalByCountryAnswer> {
     this.animalByCountryURL = this.BASE_URL + `country/getspecies/${criteria}` + this.TOKEN;
@@ -40,5 +43,10 @@ export class ResearchService {
 
   getArrayOfCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.allCountriesUrl);
+  }
+
+  getAnimalDescription(criteria: string): Observable<DescriptionAnswer> {
+    this.descriptionsURL = this.BASE_URL + `species/narrative/${criteria}` + this.TOKEN;
+    return this.http.get<DescriptionAnswer>(this.descriptionsURL);
   }
 }

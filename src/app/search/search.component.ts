@@ -5,6 +5,8 @@ import { Country } from '../models/country-list';
 import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
+import { Description } from '../models/description';
+import { DescriptionAnswer } from '../models/description-answer';
 
 @Component({
   selector: 'pgc-search',
@@ -20,6 +22,7 @@ export class SearchComponent implements OnInit {
   animals: Animal[] = [];
   countries: Country[] = [];
   animalsByCountry: Animal[] = [];
+  descriptions: Description[];
 
   constructor(private researchService: ResearchService) { }
 
@@ -52,6 +55,11 @@ export class SearchComponent implements OnInit {
     this.researchService.getAnimalCountries(this.criteria).subscribe(
       (countryListFromServer: AnimalCountriesAnswer) => {
         this.countries = countryListFromServer.result;
+      }
+    );
+    this.researchService.getAnimalDescription(this.criteria).subscribe(
+      (descriptionsFromServer: DescriptionAnswer) => {
+        this.descriptions = descriptionsFromServer.result;
       }
     );
   }

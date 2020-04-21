@@ -31,5 +31,9 @@
         Population Trend: {{animalDetails.population_trend}} <br>
         Countries:
         <span *ngFor="let country of countries">-{{country.country}}-</span>
+        <span *ngFor="let description of descriptions">-{{description.rationale}}-</span>
+    </p>
+    <p *ngFor="let description of descriptions">
+      {{description.rationale}}
     </p>
 </div>
