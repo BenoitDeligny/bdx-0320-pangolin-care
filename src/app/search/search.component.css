@@ -1,12 +1,10 @@
 .searchbarContainer{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 30%;
-  margin: auto;
-  margin-top: 15px;
+  margin: 20px;
 }
-.searchbarContainer p {
+.searchbarContainer h3 {
   background-color: rgba(33,85,94, 1);
   border-radius: 10px;
   margin: 5px;
@@ -15,9 +13,12 @@
 
 .inputContainer{
   display: flex;
-  flex-direction: column;
   margin-top: 5px;
   align-items: center;
+}
+.inputContainer input {
+  height: 100%;
+  margin: 20px;
 }
 
 .searchbar-container label{

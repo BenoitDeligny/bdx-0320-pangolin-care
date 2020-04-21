@@ -1,24 +1,27 @@
 footer{
-  height: 10%;
+  height: 40px;
   width: 100%;
   margin-bottom: 0;
   display: flex;
   justify-content: space-around;
   background-color: var(--secondColor);
+  border-radius: 10px;
 }
 
 .left-foot{
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  align-items: center;
+}
+.left-foot a:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .right-foot{
   display: flex;
   align-items: center;
 }
-
-footer a:hover{
-  color: var(--thirdColor);
+.right-foot a:hover {
   cursor: pointer;
+  color: white;
 }

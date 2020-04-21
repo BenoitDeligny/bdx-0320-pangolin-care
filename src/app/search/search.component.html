@@ -1,9 +1,9 @@
 <div class="searchbarContainer">
     <label for="searchInput">
-        <p>Recherche:</p>
+        <h3>Recherche:</h3>
     </label>
     <div class="inputContainer">
-        <input name="searchInput" type="text" [(ngModel)]="criteria">
+        <input name="searchInput" type="text" [(ngModel)]="criteria" autofocus>
         <button type="submit" (click)="sendRequest()">Submit</button>
     </div>
 
