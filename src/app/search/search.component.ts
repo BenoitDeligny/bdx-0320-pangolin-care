@@ -30,10 +30,10 @@ export class SearchComponent implements OnInit {
 
   sendRequest() {
     const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
-    if (country === undefined) {
+    /* if (country === undefined) {
       alert('Pays inconnu');
       return;
-    }
+    } */
 
     // this.criteria = testing.isocode;
 
