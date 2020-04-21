@@ -31,6 +31,9 @@ export class SearchComponent implements OnInit {
 
   sendRequest() {
 
+    // Navigate on the countries page
+    this.router.navigate(['/countries']);
+
     // Convert the user Input to ISOCODE
     const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
     if (country === undefined) {
