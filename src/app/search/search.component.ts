@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchResult() {
-    if (this.criteria.length >= 3) {
+    if (this.criteria.length >= 2) {
       this.searchResults = this.allCountries
         .filter(currentElement => currentElement.country.toUpperCase().includes(this.criteria.toUpperCase().trim()));
     }
