@@ -19,6 +19,8 @@
 }
 
 .animalDescription {
+  background-color: rgba(33,85,94, 1);
+  border-radius: 10px;
   width: 60%;
 }
 
@@ -36,7 +38,15 @@
   justify-content: center;
   align-items: center;
 }
+.icon p {
+  background-color: rgba(33,85,94, 1);
+  border-radius: 10px;
+  padding: 5px;
+}
 .icon img {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  padding: 5px;
   height: 100px;
   width: 100px;
 }

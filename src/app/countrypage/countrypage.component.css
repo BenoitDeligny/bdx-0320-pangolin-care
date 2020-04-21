@@ -19,6 +19,8 @@
 }
 
 .countryDescription {
+    background-color: rgba(33,85,94, 1);
+    border-radius: 10px;
     width: 60%;
 }
 
@@ -34,9 +36,16 @@
     display: flex;
     align-items: center;
     width: 40%;
+    margin: 15px;
 }
 
 .specieImg {
     height: 100px;
     width: 100px;
+    margin: 5px;
+}
+
+.specieDescription {
+    background-color: rgba(33,85,94, 1);
+    border-radius: 10px
 }
