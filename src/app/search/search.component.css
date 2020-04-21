@@ -13,14 +13,30 @@
 
 .inputContainer{
   display: flex;
-  margin-top: 5px;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .inputContainer input {
   height: 100%;
-  margin: 20px;
+  width: 150px;
+  margin-top: 20px;
 }
 
-.searchbar-container label{
+.searchResultsContainer {
   text-align: center;
+  width: inherit;
+  width: 150px;
+  background-color: rgba(33,85,94, 0.6);
+  border-radius: 10px;
+  margin: 0;
+ }
+
+ .searchbarContainer p {
+   margin: 0;
+ }
+.searchResultsContainer p:hover {
+  cursor: pointer;
+  background-color: rgba(33,85,94, 1);
+  border-radius: 10px;
 }

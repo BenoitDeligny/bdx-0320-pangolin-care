@@ -22,6 +22,8 @@ export class SearchComponent implements OnInit {
   countries: Country[] = [];
   animalsByCountry: Animal[] = [];
 
+  searchResults: Country[] = [];
+
   constructor(private researchService: ResearchService, private router: Router) { }
 
   ngOnInit(): void {
@@ -29,39 +31,54 @@ export class SearchComponent implements OnInit {
       .subscribe(data => this.allCountries = data);
   }
 
-  sendRequest() {
-
-    // Navigate on the countries page
-    this.router.navigate(['/countries']);
-
-    // Convert the user Input to ISOCODE
-    const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
-    if (country === undefined) {
-      alert('Pays inconnu');
-      return;
+  searchResult() {
+    if (this.criteria.length >= 3) {
+      this.searchResults = this.allCountries
+        .filter(currentElement => currentElement.country.toUpperCase().includes(this.criteria.toUpperCase().trim()));
     }
-    // this.criteria = testing.isocode;
+  }
 
-    // Search for list of animal IN one Country
-    this.researchService.getAnimalByCountry(country.isocode).subscribe(
+  searchByCountry(searchCountry: Country) {
+    this.researchService.getAnimalByCountry(searchCountry.isocode).subscribe(
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
         this.animalsByCountry = animalByCountryFromServer.result;
-      }
-    );
-
-    // Search for Details of one Animal
-    this.researchService.getAnimalDetails(country.isocode).subscribe(
-      (animalFromServer: AnimalDetailsAnswer) => {
-        this.animals = animalFromServer.result;
-      }
-    );
-
-    // Search for all Countries in one animal lives
-    this.researchService.getAnimalCountries(country.isocode).subscribe(
-      (countryListFromServer: AnimalCountriesAnswer) => {
-        this.countries = countryListFromServer.result;
       }
     );
   }
 
 }
+
+// sendRequest() {
+
+//   // Navigate on the countries page
+//   this.router.navigate(['/countries']);
+
+//   // Convert the user Input to ISOCODE
+//   const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
+//   if (country === undefined) {
+//     alert('Pays inconnu');
+//     return;
+//   }
+//   // this.criteria = testing.isocode;
+
+//   // Search for list of animal IN one Country
+//   this.researchService.getAnimalByCountry(country.isocode).subscribe(
+//     (animalByCountryFromServer: AnimalByCountryAnswer) => {
+//       this.animalsByCountry = animalByCountryFromServer.result;
+//     }
+//   );
+
+//   // Search for Details of one Animal
+//   this.researchService.getAnimalDetails(country.isocode).subscribe(
+//     (animalFromServer: AnimalDetailsAnswer) => {
+//       this.animals = animalFromServer.result;
+//     }
+//   );
+
+//   // Search for all Countries in one animal lives
+//   this.researchService.getAnimalCountries(country.isocode).subscribe(
+//     (countryListFromServer: AnimalCountriesAnswer) => {
+//       this.countries = countryListFromServer.result;
+//     }
+//   );
+// }
