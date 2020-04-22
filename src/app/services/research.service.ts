@@ -21,24 +21,20 @@ export class ResearchService {
   BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
-  animalByCountryURL = '';
-  animalDetailsURL = '';
-  animalCountriesURL = '';
-  descriptionsURL = '';
 
   getAnimalByCountry(criteria: string): Observable<AnimalByCountryAnswer> {
-    this.animalByCountryURL = this.BASE_URL + `country/getspecies/${criteria}` + this.TOKEN;
-    return this.http.get<AnimalByCountryAnswer>(this.animalByCountryURL);
+    const url = this.BASE_URL + `country/getspecies/${criteria}` + this.TOKEN;
+    return this.http.get<AnimalByCountryAnswer>(url);
   }
 
   getAnimalDetails(criteria: string): Observable<AnimalDetailsAnswer> {
-    this.animalDetailsURL = this.BASE_URL + `species/${criteria}` + this.TOKEN;
-    return this.http.get<AnimalDetailsAnswer>(this.animalDetailsURL);
+    const url = this.BASE_URL + `species/${criteria}` + this.TOKEN;
+    return this.http.get<AnimalDetailsAnswer>(url);
   }
 
   getAnimalCountries(criteria: string): Observable<AnimalCountriesAnswer> {
-    this.animalCountriesURL = this.BASE_URL + `species/countries/name/${criteria}` + this.TOKEN;
-    return this.http.get<AnimalCountriesAnswer>(this.animalCountriesURL);
+    const url = this.BASE_URL + `species/countries/name/${criteria}` + this.TOKEN;
+    return this.http.get<AnimalCountriesAnswer>(url);
   }
 
   getArrayOfCountries(): Observable<Country[]> {
@@ -46,7 +42,7 @@ export class ResearchService {
   }
 
   getAnimalDescription(criteria: string): Observable<DescriptionAnswer> {
-    this.descriptionsURL = this.BASE_URL + `species/narrative/${criteria}` + this.TOKEN;
-    return this.http.get<DescriptionAnswer>(this.descriptionsURL);
+    const url = this.BASE_URL + `species/narrative/${criteria}` + this.TOKEN;
+    return this.http.get<DescriptionAnswer>(url);
   }
 }

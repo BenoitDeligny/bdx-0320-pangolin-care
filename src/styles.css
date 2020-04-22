@@ -1,5 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
+:root {
+  --mainColor: #166B00;
+  --secondColor: #51A0AD;
+  --thirdColor: #AD6387;
+  --policeColor: white;
+}
+
 body {
   background-color: var(--mainColor);
 }
@@ -7,24 +12,6 @@ body {
 a {
   color: white;
   text-decoration: none;
-}
-
-=======
->>>>>>> 18e745cae69618a54157bd445a64f63715f2444b
-:root {
-  --mainColor: #166B00;
-}
-
-:root {
-  --secondColor: #51A0AD;
-}
-
-:root {
-  --thirdColor: #AD6387;
-}
-
-:root {
-  --policeColor: white;
 }
 
 body {
