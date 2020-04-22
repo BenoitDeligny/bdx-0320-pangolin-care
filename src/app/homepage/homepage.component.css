@@ -1,0 +1,11 @@
+.mapContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 100%;
+    width: 95%;
+}
+.mapContainer img {
+    height: 480px;
+}

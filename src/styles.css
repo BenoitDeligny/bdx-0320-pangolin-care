@@ -1,40 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
-
-mainColor {
-  --mainColor: #E8C682;
-}
-
-secondColor {
-  --secondColor: #69645A;
-}
-
-thirdColor {
-  --thirdColor: #166B00;
-}
-
-policeColor {
+:root {
+  --mainColor: #166B00;
+  --secondColor: #51A0AD;
+  --thirdColor: #AD6387;
   --policeColor: white;
 }
 
+body {
+  background-color: var(--mainColor);
+}
 
-p {
-  font-size: 1vw;
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background: url(assets/img/dryEarth-wallPaper.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 16px;
+}
+
+
+p, a {
+  font-size: 1em;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
+  text-decoration: none;
+  margin: 5px;
 }
 h4 {
-  font-size: 1.7vw;
+  font-size: 1.3em;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
+  margin: 5px;
 }
 h3 {
-  font-size: 2.4vw;
+  font-size: 1.6em;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
+  margin: 5px;
 }
 h2 {
-  font-size: 3.1vw;
+  font-size: 1.9em;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
+  margin: 5px;
 }
 h1 {
-  font-size: 3.8vw;
+  font-size: 2.2em;
   font-family: 'Volkhov', serif;
+  color: var(--policeColor);
+  margin: 5px;
 }
 

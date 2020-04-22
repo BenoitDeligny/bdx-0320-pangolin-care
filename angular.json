@@ -21,7 +21,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/app/models"
             ],
             "styles": [
               "src/styles.css"
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pangoCare"
+    }
+  },
+  "defaultProject": "pangoCare",
+  "cli": {
+    "analytics": "d664c42a-5556-4c65-b8cb-79314c522008"
+  }
 }

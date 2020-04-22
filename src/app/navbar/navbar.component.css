@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    position: sticky;
+    top: 20px;
+    width: 50%;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--secondColor);
+    border-radius: 10px;
+    color: whitesmoke;
+    margin: auto;
+}
+
+.menu-link{
+  width: 33.33%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  margin: 0;
+}
+
+.menu-link:hover{
+  background-color: var(--thirdColor);
+  color: white;
+  cursor: pointer;
+}
+
+.menu-link:focus {
+  outline: none;
+}
