@@ -1,0 +1,30 @@
+:root {
+    --mainBgColor: rgba(25,25,30, 1);
+    --secondColor: rgba(240,135,35, 1);
+}
+
+body {
+        background: var(--mainBgColor);
+        font-family: 'Volkhov', serif;
+}
+
+h1, h2, h3, p, a, li {
+    color: rgba(240, 240, 240, 1);
+}
+
+h1 {
+    font-size: 2.5vw;
+}
+h2 {
+    font-size: 2.vw;
+}
+h3 {
+    font-size: 1.5vw;
+}
+p {
+    font-size: 1vw;
+}
+a {
+    font-size: 1vw;
+    text-decoration: none;
+}
