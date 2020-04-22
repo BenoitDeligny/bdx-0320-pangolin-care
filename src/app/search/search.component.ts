@@ -5,12 +5,9 @@ import { Country } from '../models/country-list';
 import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
-<<<<<<< HEAD
 import { Description } from '../models/description';
 import { DescriptionAnswer } from '../models/description-answer';
-=======
 import { Router } from '@angular/router';
->>>>>>> feat/benoit
 
 @Component({
   selector: 'pgc-search',
@@ -38,32 +35,6 @@ export class SearchComponent implements OnInit {
       .subscribe(data => this.allCountries = data);
   }
 
-<<<<<<< HEAD
-  sendRequest() {
-    /* const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
-    if (country === undefined) {
-      alert('Pays inconnu');
-      return;
-    } */
-
-    // this.criteria = testing.isocode;
-
-    this.researchService.getAnimalByCountry(this.criteria).subscribe(
-      (animalByCountryFromServer: AnimalByCountryAnswer) => {
-        this.animalsByCountry = animalByCountryFromServer.result;
-      }
-    );
-
-    this.researchService.getAnimalDetails(this.criteria).subscribe(
-      (animalFromServer: AnimalDetailsAnswer) => {
-        this.animals = animalFromServer.result;
-      }
-    );
-
-    this.researchService.getAnimalCountries(this.criteria).subscribe(
-      (countryListFromServer: AnimalCountriesAnswer) => {
-        this.countries = countryListFromServer.result;
-=======
   searchResult() {
     if (this.criteria.length >= 2) {
       this.isHidden = false;
@@ -79,7 +50,6 @@ export class SearchComponent implements OnInit {
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
         this.animalsByCountry = animalByCountryFromServer.result;
         this.criteria = searchCountry.country;
->>>>>>> feat/benoit
       }
     );
     this.researchService.getAnimalDescription(this.criteria).subscribe(
