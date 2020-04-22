@@ -1,3 +1,8 @@
+<pgc-search (countrySelected)="getCountrySelected($event)"></pgc-search>
+<div *ngFor="let animalOfCountry of animalsByCountry">
+  {{animalOfCountry.scientific_name}}
+</div>
+<!--
 <div class="overallContainer">
     <div class="countryContainer">
         <div class="imgContainer">
@@ -267,3 +272,4 @@
         </div>
     </div>
 </div>
+-->

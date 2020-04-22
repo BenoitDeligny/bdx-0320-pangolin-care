@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Animal } from '../models/animal';
 
 @Component({
   selector: 'pgc-countrypage',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountrypageComponent implements OnInit {
 
+  animalsByCountry: Animal[] = [];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getCountrySelected(country){
+    this.animalsByCountry.push(country);
+    console.log(this.animalsByCountry);
+
   }
 
 }

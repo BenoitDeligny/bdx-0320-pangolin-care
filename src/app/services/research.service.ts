@@ -5,7 +5,6 @@ import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 import { Country } from '../models/country-list';
-import { Description } from '../models/description';
 import { DescriptionAnswer } from '../models/description-answer';
 
 
