@@ -6,15 +6,6 @@
 }
 
 body {
-  background-color: var(--mainColor);
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-body {
   background: url(assets/img/dryEarth-wallPaper.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -23,7 +14,10 @@ body {
   font-size: 16px;
 }
 
-
+a {
+  color: white;
+  text-decoration: none;
+}
 p, a {
   font-size: 1em;
   font-family: 'Volkhov', serif;
