@@ -1,0 +1,42 @@
+.overallContainer {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.countryContainer {
+    display: flex;
+}
+.countryContainer * {
+    margin-right: 10px;
+}
+
+.imgContainer {
+    width: max-content;
+}
+
+.countryDescription {
+    width: auto;
+}
+.countryContainer p {
+    margin: 5px;
+}
+
+.speciesContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.specie {
+    display: flex;
+    width: 40%;
+}
+.specie * {
+    margin-top: 10px;
+    margin-right: 10px;
+}
