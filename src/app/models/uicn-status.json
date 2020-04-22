@@ -1,0 +1,34 @@
+[
+    {
+        "status": "EX",
+        "description": "Une espèce est déclarée éteinte lorsque des études complètes (et adaptées à la biologie de l'espèce) ont permis d'affirmer que le dernier individu est mort."
+    },
+    {
+        "status": "EW",
+        "description": "Une espèce est classée « éteint à l'état sauvage » lorsqu'il n'existe plus de spécimens dans la nature. Il faut que l'espèce en question soit uniquement élevée en dehors de son aire de répartition d'origine."
+    },
+    {
+        "status": "CR",
+        "description": "Une espèce est dite En danger critique d’extinction lorsque les meilleures données disponibles indiquent qu’elle remplit l’un des critères A à E (Critères d'exemple: Réduction des effectifs ≥ 90 % constatée // Population estimée à moins de 50 individus adultes.) correspondant à la catégorie En danger critique d’extinction et, en conséquence, qu’elle est confrontée à un risque extrêmement élevé d’extinction à l’état sauvage."
+    },
+    {
+        "status": "EN",
+        "description": "Une espèce est dite En danger lorsque les meilleures données disponibles indiquent qu’elle remplit l’un des critères A à E (Critères d'exemple: Réduction des effectifs ≥ 70 % constatée // Population estimée à moins de 250 individus matures) correspondant à la catégorie En danger et, en conséquence, qu’elle est confrontée à un risque très élevé d’extinction à l’état sauvage."
+    },
+    {
+        "status": "VU",
+        "description": "Une espèce est dite Vulnérable lorsque les meilleures données disponibles indiquent qu’elle remplit l’un des critères A à E (Critères d'exemple: Réduction des effectifs ≥ 50 % constatée // Population estimée à moins de 10 000 individus matures) correspondant à la catégorie Vulnérable et, en conséquence, qu’elle est confrontée à un risque élevé d’extinction à l’état sauvage."
+    },
+    {
+        "status": "NT",
+        "description": "Une espèce est dite quasi menacée lorsqu’elle a été évaluée d’après les critères et ne remplit pas, pour l’instant, les critères des catégories En danger critique d’extinction, En danger ou Vulnérable mais qu’elle est près de remplir les critères correspondant aux catégories du groupe Menacé ou qu’elle les remplira probablement dans un proche avenir."
+    },
+    {
+        "status": "LC",
+        "description": "Une espèce est dite de Préoccupation mineure lorsqu’elle a été évaluée d’après les critères et ne remplit pas les critères des catégories En danger critique d’extinction, En danger ou Vulnérable ou Quasi menacé. Dans cette catégorie sont incluses les espèces largement répandues et abondantes. L'Humain fait partie de cette catégorie."
+    },
+    {
+        "status": "DD",
+        "description": "Une espèce entre dans la catégorie Données insuffisantes lorsqu’on ne dispose pas d’assez de données pour évaluer directement ou indirectement le risque d’extinction en fonction de sa distribution et/ou de l’état de sa population. Une espèce inscrite dans cette catégorie peut avoir fait l’objet d’études approfondies et sa biologie peut être bien connue, sans que l’on dispose pour autant de données pertinentes sur l’abondance et/ou la distribution. Il ne s’agit donc pas d’une catégorie Menacé. L’inscription d’une espèce dans cette catégorie indique qu’il est nécessaire de rassembler davantage de données et n’exclut pas la possibilité de démontrer, grâce à de futures recherches, que l'espèce aurait pu être classée dans une catégorie Menacé. Il est impératif d’utiliser pleinement toutes les données disponibles."
+    }
+]

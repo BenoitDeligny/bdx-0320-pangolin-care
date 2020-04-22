@@ -1,14 +1,13 @@
-<div class="searchbar-container">
-    <label for="searchInput">
-        <p>Recherche (isocode pays OU nom scientifque de l'animal):</p>
-    </label>
-    <div class="input-container">
-        <input name="searchInput" type="text" [(ngModel)]="criteria">
-        <button type="submit" (click)="sendRequest()">Submit</button>
+<div class="searchbarContainer">
+    <div class="inputContainer">
+        <input name="searchInput" type="text" [(ngModel)]="criteria" (keyup)="searchResult()" autofocus>
+        <div class="searchResultsContainer">
+            <div *ngFor="let searchResult of searchResults" (click)="searchByCountry(searchResult)">
+                <p [hidden]="isHidden">{{searchResult.country}}</p>
+            </div>
+        </div>
     </div>
-
 </div>
-
 
 <div>
     <p *ngFor="let animal of animalsByCountry">
@@ -17,7 +16,6 @@
         </span>
     </p>
 </div>
-
 
 <div>
     <p *ngFor="let animalDetails of animals">

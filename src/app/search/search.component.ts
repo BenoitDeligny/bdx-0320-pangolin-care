@@ -5,8 +5,12 @@ import { Country } from '../models/country-list';
 import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
+<<<<<<< HEAD
 import { Description } from '../models/description';
 import { DescriptionAnswer } from '../models/description-answer';
+=======
+import { Router } from '@angular/router';
+>>>>>>> feat/benoit
 
 @Component({
   selector: 'pgc-search',
@@ -16,6 +20,7 @@ import { DescriptionAnswer } from '../models/description-answer';
 export class SearchComponent implements OnInit {
 
   criteria = '';
+  isHidden = false;
 
   allCountries: Country[] = [];
 
@@ -24,13 +29,16 @@ export class SearchComponent implements OnInit {
   animalsByCountry: Animal[] = [];
   descriptions: Description[];
 
-  constructor(private researchService: ResearchService) { }
+  searchResults: Country[] = [];
+
+  constructor(private researchService: ResearchService, private router: Router) { }
 
   ngOnInit(): void {
     this.researchService.getArrayOfCountries()
       .subscribe(data => this.allCountries = data);
   }
 
+<<<<<<< HEAD
   sendRequest() {
     /* const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
     if (country === undefined) {
@@ -55,6 +63,23 @@ export class SearchComponent implements OnInit {
     this.researchService.getAnimalCountries(this.criteria).subscribe(
       (countryListFromServer: AnimalCountriesAnswer) => {
         this.countries = countryListFromServer.result;
+=======
+  searchResult() {
+    if (this.criteria.length >= 2) {
+      this.isHidden = false;
+      this.searchResults = this.allCountries
+        .filter(currentElement => currentElement.country.toUpperCase().includes(this.criteria.toUpperCase().trim()));
+    } else if (this.criteria.length < 2) {
+      this.isHidden = true;
+    }
+  }
+
+  searchByCountry(searchCountry: Country) {
+    this.researchService.getAnimalByCountry(searchCountry.isocode).subscribe(
+      (animalByCountryFromServer: AnimalByCountryAnswer) => {
+        this.animalsByCountry = animalByCountryFromServer.result;
+        this.criteria = searchCountry.country;
+>>>>>>> feat/benoit
       }
     );
     this.researchService.getAnimalDescription(this.criteria).subscribe(
@@ -65,3 +90,38 @@ export class SearchComponent implements OnInit {
   }
 
 }
+
+// sendRequest() {
+
+//   // Navigate on the countries page
+//   this.router.navigate(['/countries']);
+
+//   // Convert the user Input to ISOCODE
+//   const country = this.allCountries.find(currentElement => currentElement.country.toUpperCase() === this.criteria.toUpperCase());
+//   if (country === undefined) {
+//     alert('Pays inconnu');
+//     return;
+//   }
+//   // this.criteria = testing.isocode;
+
+//   // Search for list of animal IN one Country
+//   this.researchService.getAnimalByCountry(country.isocode).subscribe(
+//     (animalByCountryFromServer: AnimalByCountryAnswer) => {
+//       this.animalsByCountry = animalByCountryFromServer.result;
+//     }
+//   );
+
+//   // Search for Details of one Animal
+//   this.researchService.getAnimalDetails(country.isocode).subscribe(
+//     (animalFromServer: AnimalDetailsAnswer) => {
+//       this.animals = animalFromServer.result;
+//     }
+//   );
+
+//   // Search for all Countries in one animal lives
+//   this.researchService.getAnimalCountries(country.isocode).subscribe(
+//     (countryListFromServer: AnimalCountriesAnswer) => {
+//       this.countries = countryListFromServer.result;
+//     }
+//   );
+// }
