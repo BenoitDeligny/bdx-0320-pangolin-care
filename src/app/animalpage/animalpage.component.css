@@ -3,7 +3,7 @@
     position: absolute;
     top: 20%;
     left: 20%;
-    bottom: 0;
+    bottom: 10%;
     right: 0;
     z-index: 1;
 }
@@ -23,6 +23,10 @@
     align-items: center;
     width: 65%;
     margin-left: 40px;
+}
+
+.animalTitle * {
+    margin: 5px;
 }
 
 .animalIcons {
@@ -55,9 +59,19 @@
     justify-content: space-evenly;
     width: 100%;
 }
+.animalDetails * {
+    margin: 5px;
+}
+
+.descriptionContainer {
+    width: 85%;
+}
 
 .animalDescription {
     width: 100%;
+}
+.animalDescription * {
+    margin: 5px;
 }
 
 .readMoreLink {
