@@ -44,8 +44,9 @@
     position: absolute;
     top: 60px;
     width: 100%;
-    background-color: rgba(50,50,50, 0.2);
+    background-color: rgba(50,50,50, 1);
     border-radius: 20px;
+    z-index: 2;
 }
 .searchbarContainer p {
     margin: 10px;
