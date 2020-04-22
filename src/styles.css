@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
+
 body {
   background-color: var(--mainColor);
 }
@@ -9,8 +8,6 @@ a {
   text-decoration: none;
 }
 
-=======
->>>>>>> 18e745cae69618a54157bd445a64f63715f2444b
 :root {
   --mainColor: #166B00;
 }
