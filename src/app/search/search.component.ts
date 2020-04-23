@@ -47,30 +47,17 @@ export class SearchComponent implements OnInit {
   }
 
   searchByCountry(searchCountry: Country) {
-     // --- navigateByUrl/Country/searchCountry.isocode
+    this.router.navigate(['/countries', searchCountry.isocode]);
     this.isHidden = true;
-
-    this.researchService.getAnimalByCountry(searchCountry.isocode).subscribe(
-      (animalByCountryFromServer: AnimalByCountryAnswer) => {
-        this.animalsByCountry = animalByCountryFromServer.result;
-        for (const animal of this.animalsByCountry) {
-          if (animal.category === 'CR' || animal.category === 'EW'){
-            this.countrySelected.emit(animal);
-          }
-        }
-        this.criteria = searchCountry.country;
-      }
-    );
-    this.researchService.getAnimalDescription(this.criteria).subscribe(
-      (descriptionsFromServer: DescriptionAnswer) => {
-        this.descriptions = descriptionsFromServer.result;
-      }
-    );
-
+    this.criteria = searchCountry.country;
   }
 
 }
-
+ /* this.researchService.getAnimalDescription(this.criteria).subscribe(
+      (descriptionsFromServer: DescriptionAnswer) => {
+        this.descriptions = descriptionsFromServer.result;
+      }
+    ); */
 // sendRequest() {
 
 //   // Navigate on the countries page
