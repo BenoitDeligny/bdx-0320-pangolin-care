@@ -15,6 +15,7 @@ export class CountrypageComponent implements OnInit {
 
   animalsByCountry: Animal[] = [];
   descriptions: Description[] = [];
+  criteria = '';
 
   constructor(private researchService: ResearchService, private route: ActivatedRoute) { }
 
@@ -28,6 +29,15 @@ export class CountrypageComponent implements OnInit {
           for (const animal of result) {
             if (animal.category === 'CR' || animal.category === 'EW') {
               this.animalsByCountry.push(animal);
+              this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
+                (descriptionsFromServer: DescriptionAnswer) => {
+                  const result2 = descriptionsFromServer.result;
+                  for (const description of result2) {
+                    this.descriptions.push(description);
+                  }
+                  console.log(this.descriptions);
+                }
+              );
             }
           }
         }

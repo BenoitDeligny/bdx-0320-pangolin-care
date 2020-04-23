@@ -6,6 +6,7 @@ import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 import { Country } from '../models/country-list';
 import { DescriptionAnswer } from '../models/description-answer';
+import { Animal } from '../models/animal';
 
 
 @Injectable({
