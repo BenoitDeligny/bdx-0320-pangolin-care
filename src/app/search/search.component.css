@@ -18,7 +18,7 @@
 
 .inputContainer input {
     color: rgba(240, 240, 240, 0.6);
-    font-size: 2vw;
+    font-size: 1.2vw;
     width: 75%;
     height: 80%;
     border: none;
@@ -34,6 +34,9 @@
     height: 60%;
     margin: 5px;
     padding: 5px;
+}
+.inputContainer img:hover{
+    cursor: pointer;
 }
 
 .searchResultsContainer {
@@ -55,4 +58,10 @@
     cursor: pointer;
     color: rgba(240,135,35, 1);
     text-decoration: underline;
+}
+
+label{
+    color: var(--secondColor);
+    font-size: 1.2vw;
+    margin-right: 10px;
 }

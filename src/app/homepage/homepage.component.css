@@ -1,0 +1,25 @@
+.overallContainer {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.websiteTitle {
+    position: absolute;
+    text-decoration: underline rgba(240,135,35, 1);
+    top: 10%;
+}
+
+.websitePurpose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
