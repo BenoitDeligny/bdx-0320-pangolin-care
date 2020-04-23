@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Animal } from '../models/animal';
 import { ResearchService } from '../services/research.service';
 import { Country } from '../models/country-list';
@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  @Output() countrySelected = new EventEmitter();
 
   criteria = '';
   isHidden = false;
@@ -46,10 +47,17 @@ export class SearchComponent implements OnInit {
   }
 
   searchByCountry(searchCountry: Country) {
+     // --- navigateByUrl/Country/searchCountry.isocode
     this.isHidden = true;
+
     this.researchService.getAnimalByCountry(searchCountry.isocode).subscribe(
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
         this.animalsByCountry = animalByCountryFromServer.result;
+        for (const animal of this.animalsByCountry) {
+          if (animal.category === 'CR' || animal.category === 'EW'){
+            this.countrySelected.emit(animal);
+          }
+        }
         this.criteria = searchCountry.country;
       }
     );
@@ -58,6 +66,7 @@ export class SearchComponent implements OnInit {
         this.descriptions = descriptionsFromServer.result;
       }
     );
+
   }
 
 }
