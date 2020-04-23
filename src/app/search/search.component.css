@@ -11,9 +11,9 @@
     align-items: center;
     position: relative;
     width: 33%;
-    height: 60px;
+    height: 40px;
     background-color: rgba(50,50,50, 0.5);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .inputContainer input {
@@ -22,7 +22,7 @@
     width: 75%;
     height: 80%;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: rgba(50,50,50, 0.2);
     caret-color: rgba(240, 240, 240, 0.6);
 }
@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 60px;
+    top: 40px;
     width: 100%;
     background-color: rgba(50,50,50, 1);
     border-radius: 20px;

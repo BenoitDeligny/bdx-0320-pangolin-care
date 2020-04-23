@@ -3,6 +3,8 @@ import { Animal } from '../models/animal';
 import { ResearchService } from '../services/research.service';
 import { ActivatedRoute } from '@angular/router';
 import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
+import { DescriptionAnswer } from '../models/description-answer';
+import { Description } from '../models/description';
 
 @Component({
   selector: 'pgc-countrypage',
@@ -12,6 +14,7 @@ import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
 export class CountrypageComponent implements OnInit {
 
   animalsByCountry: Animal[] = [];
+  descriptions: Description[] = [];
 
   constructor(private researchService: ResearchService, private route: ActivatedRoute) { }
 
@@ -29,8 +32,15 @@ export class CountrypageComponent implements OnInit {
           }
         }
       );
-    }
-    );
-
+      /* this.researchService.getAnimalDescription(isocode).subscribe(
+        (descriptionsFromServer: DescriptionAnswer) => {
+          const result = descriptionsFromServer.result;
+          for (const description of result) {
+            this.descriptions.push(description);
+          }
+          console.log(this.descriptions);
+        }
+      ); */
+    });
   }
 }
