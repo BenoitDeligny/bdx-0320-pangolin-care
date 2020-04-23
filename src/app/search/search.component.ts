@@ -48,6 +48,8 @@ export class SearchComponent implements OnInit {
 
   searchByCountry(searchCountry: Country) {
      // --- navigateByUrl/Country/searchCountry.isocode
+    this.isHidden = true;
+
     this.researchService.getAnimalByCountry(searchCountry.isocode).subscribe(
       (animalByCountryFromServer: AnimalByCountryAnswer) => {
         this.animalsByCountry = animalByCountryFromServer.result;

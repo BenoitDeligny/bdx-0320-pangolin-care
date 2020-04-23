@@ -1,55 +1,86 @@
 .overallContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.animalResume {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 20px;
+    display: flex;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    bottom: 10%;
+    right: 0;
+    z-index: 1;
 }
 
 .animalImg {
-  height: 200px;
-  width: 200px;
-  margin: 20px;
+    width: 35%;
+}
+.animalImg img {
+    width: 100%;
+    height: 100%;
 }
 
-.animalDescription {
-  background-color: rgba(33,85,94, 1);
-  border-radius: 10px;
-  width: 60%;
-  margin: 40px;
+.animalResume {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    margin-left: 40px;
+}
+
+.animalTitle * {
+    margin: 5px;
 }
 
 .animalIcons {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-evenly;
-  margin: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+    background-color: rgba(50,50,50, 0.4);
 }
-.icon h4 {
-  background-color: rgba(33,85,94, 1);
-  border-radius: 10px;
-  padding: 5px;
+.icon p {
+    margin: 2px;
 }
+
 .icon img {
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 10px;
-  padding: 5px;
-  height: 100px;
-  width: 100px;
+    height: 100px;
+    width: 100px;
+}
+
+.animalDetails {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.animalDetails * {
+    margin: 5px;
+}
+
+.descriptionContainer {
+    width: 85%;
+}
+
+.animalDescription {
+    width: 100%;
+}
+.animalDescription * {
+    margin: 5px;
+}
+
+.readMoreLink {
+    color: rgba(240,135,35, 1);
+}
+.readMoreLink:hover {
+    text-decoration: underline;
+}
+
+p {
+    color: rgba(240, 240, 240, 0.5);
 }

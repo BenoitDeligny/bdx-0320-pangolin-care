@@ -1,6 +1,8 @@
 <div class="searchbarContainer">
     <div class="inputContainer">
-        <input name="searchInput" type="text" [(ngModel)]="criteria" (keyup)="searchResult()" autofocus>
+        <input name="searchInput" type="text" [(ngModel)]="criteria" (keyup)="searchResult()" placeholder="Research..."
+            autofocus>
+        <img src="assets/img/searchIcon.png">
         <div class="searchResultsContainer">
             <div *ngFor="let searchResult of searchResults" (click)="searchByCountry(searchResult)">
                 <p [hidden]="isHidden">{{searchResult.country}}</p>
@@ -32,6 +34,6 @@
         <span *ngFor="let description of descriptions">-{{description.rationale}}-</span>
     </p>
     <p *ngFor="let description of descriptions">
-      {{description.rationale}}
+        {{description.rationale}}
     </p>
 </div>
