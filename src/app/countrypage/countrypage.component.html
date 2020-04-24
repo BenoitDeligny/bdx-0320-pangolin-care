@@ -1,4 +1,6 @@
-<pgc-search (countrySelected)="getCountrySelected($event)"></pgc-search>
+<!-- <div>
+    <img src="assets/img/world-map.png">
+</div> -->
 <div class="overallContainer">
     <div class="countryContainer">
         <div class="imgContainer">
@@ -10,8 +12,8 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci vel aut corrupti rerum est voluptates earum quod labore facilis, soluta magni repudiandae voluptatum eaque id impedit error esse inventore! Voluptas.</p>
         </div>
     </div>
-    <div class="speciesContainer" *ngFor="let animalOfCountry of animalsByCountry">
-        <div class="specie">
+    <div class="speciesContainer">
+        <div class="specie" *ngFor="let animalOfCountry of animalsByCountry">
             <div class="specieImg">
                 <img src="https://via.placeholder.com/100x100">
             </div>

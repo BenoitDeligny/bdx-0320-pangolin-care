@@ -7,7 +7,7 @@ import { AnimalpageComponent } from './animalpage/animalpage.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent},
-  { path: 'countries', component: CountrypageComponent},
+  { path: 'countries/:isocode', component: CountrypageComponent},
   { path: 'animals', component: AnimalpageComponent},
   { path: '**', redirectTo: ''}
 ];
