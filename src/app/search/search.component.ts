@@ -2,11 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Animal } from '../models/animal';
 import { ResearchService } from '../services/research.service';
 import { Country } from '../models/country-list';
-import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
-import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
-import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 import { Description } from '../models/description';
-import { DescriptionAnswer } from '../models/description-answer';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,8 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  @Output() countrySelected = new EventEmitter();
-
   criteria = '';
   isHidden = false;
 
