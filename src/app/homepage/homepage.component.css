@@ -19,7 +19,9 @@
 
 .websitePurpose {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 75%;
+    text-align: center;
 }
