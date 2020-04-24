@@ -1,51 +1,46 @@
 .overallContainer {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .countryContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     align-items: center;
-    margin: 20px;
+}
+.countryContainer * {
+    margin-right: 10px;
 }
 
 .imgContainer {
-    height: 200px;
-    width: 200px;
+    width: max-content;
 }
 
 .countryDescription {
-    background-color: rgba(33,85,94, 1);
-    border-radius: 10px;
-    width: 60%;
+    width: auto;
+}
+.countryContainer p {
+    margin: 5px;
 }
 
 .speciesContainer {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
 }
 
 .specie {
     display: flex;
     align-items: center;
     width: 40%;
-    margin: 15px;
 }
-
-.specieImg {
-    height: 100px;
-    width: 100px;
-    margin: 5px;
-}
-
-.specieDescription {
-    background-color: rgba(33,85,94, 1);
-    border-radius: 10px
+.specie * {
+    margin-top: 10px;
+    margin-right: 10px;
 }

@@ -1,33 +1,53 @@
-.navbar{
+.navbar {
     display: flex;
-    position: sticky;
-    top: 20px;
-    width: 50%;
-    height: 40px;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    background-color: var(--secondColor);
-    border-radius: 10px;
-    color: whitesmoke;
-    margin: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    background-color: rgba(50,50,50, 1);
+    z-index: 2;
 }
 
-.menu-link{
-  width: 33.33%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  border-radius: 10px;
-  align-items: center;
-  margin: 0;
+img {
+    position: absolute;
+    top: 5px;
+    left: 5.5%;
+    height: 60px;
+    width: 60px;
+    z-index: 3;
 }
 
-.menu-link:hover{
-  background-color: var(--thirdColor);
-  color: white;
-  cursor: pointer;
+.navbar h3:hover {
+    cursor: pointer;
+}
+.navbar h3:focus {
+    outline: none;
 }
 
-.menu-link:focus {
-  outline: none;
+h3.effect-underline:after {
+	content: '';
+    display: inline-block;
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    height: 1em;
+    margin-top: 10px;
+    color: var(--secondColor);
+    opacity: 0;
+    border-bottom: 2px solid;
+
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+h3.effect-underline:hover:after {
+    opacity: 1;
+
+	-webkit-transform: scale(1);
+	transform: scale(1);
 }

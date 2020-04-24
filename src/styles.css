@@ -1,58 +1,37 @@
 :root {
-  --mainColor: #166B00;
-  --secondColor: #51A0AD;
-  --thirdColor: #AD6387;
-  --policeColor: white;
+    --mainBgColor: rgba(25,25,30);
+    --secondColor: rgba(240,135,35);
+    --policeColor: rgba(240, 240, 240);
+    --CardsBackgroundColor: rgba(50,50,50, 0.4)
 }
 
 body {
-  background-color: var(--mainColor);
+        background: var(--mainBgColor);
+        font-family: 'Volkhov', serif, 'Roboto', sans-serif;
 }
 
-a {
-  color: white;
-  text-decoration: none;
+h1, h2, h3 {
+  font-family: 'Roboto';
+  color: var(--policeColor)
 }
 
-body {
-  background: url(assets/img/dryEarth-wallPaper.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-size: 16px;
+p, a, li{
+  color: var(--policeColor)
 }
 
-
-p, a {
-  font-size: 1em;
-  font-family: 'Volkhov', serif;
-  color: var(--policeColor);
-  text-decoration: none;
-  margin: 5px;
-}
-h4 {
-  font-size: 1.3em;
-  font-family: 'Volkhov', serif;
-  color: var(--policeColor);
-  margin: 5px;
-}
-h3 {
-  font-size: 1.6em;
-  font-family: 'Volkhov', serif;
-  color: var(--policeColor);
-  margin: 5px;
+h1 {
+    font-size: 2.7vw;
 }
 h2 {
-  font-size: 1.9em;
-  font-family: 'Volkhov', serif;
-  color: var(--policeColor);
-  margin: 5px;
+    font-size: 2.3vw;
 }
-h1 {
-  font-size: 2.2em;
-  font-family: 'Volkhov', serif;
-  color: var(--policeColor);
-  margin: 5px;
+h3 {
+    font-size: 1.6vw;
 }
-
+p {
+    font-size: 1.1vw;
+}
+a {
+    font-size: 1vw;
+    text-decoration: none;
+}

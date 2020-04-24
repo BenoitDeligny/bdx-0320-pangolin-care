@@ -1,6 +1,9 @@
 <div class="searchbarContainer">
+    <label for="searchInput">Enter a Country :</label>
     <div class="inputContainer">
-        <input name="searchInput" type="text" [(ngModel)]="criteria" (keyup)="searchResult()" autofocus>
+        <input name="searchInput" type="text" [(ngModel)]="criteria" (keyup)="searchResult()" placeholder="Research..."
+            autofocus>
+        <img src="assets/img/searchIcon.png">
         <div class="searchResultsContainer">
             <div *ngFor="let searchResult of searchResults" (click)="searchByCountry(searchResult)">
                 <p [hidden]="isHidden">{{searchResult.country}}</p>
@@ -9,29 +12,3 @@
     </div>
 </div>
 
-<div>
-    <p *ngFor="let animal of animalsByCountry">
-        <span *ngIf="animal.category === 'CR' || animal.category === 'EW'">
-            -- {{animal.scientific_name}} --
-        </span>
-    </p>
-</div>
-
-<div>
-    <p *ngFor="let animalDetails of animals">
-        ID: {{animalDetails.taxonid}} <br>
-        Scientific Name: {{animalDetails.scientific_name}} <br>
-        Class: {{animalDetails.class}} <br>
-        Order: {{animalDetails.order}} <br>
-        Family: {{animalDetails.family}} <br>
-        Common Name: {{animalDetails.main_common_name}} <br>
-        Status IUCN: {{animalDetails.category}} <br>
-        Population Trend: {{animalDetails.population_trend}} <br>
-        Countries:
-        <span *ngFor="let result of countries">-{{result.country}}-</span>
-        <span *ngFor="let description of descriptions">-{{description.rationale}}-</span>
-    </p>
-    <p *ngFor="let description of descriptions">
-      {{description.rationale}}
-    </p>
-</div>
