@@ -32,15 +32,6 @@ export class CountrypageComponent implements OnInit {
           }
         }
       );
-      /* this.researchService.getAnimalDescription(isocode).subscribe(
-        (descriptionsFromServer: DescriptionAnswer) => {
-          const result = descriptionsFromServer.result;
-          for (const description of result) {
-            this.descriptions.push(description);
-          }
-          console.log(this.descriptions);
-        }
-      ); */
     });
   }
 }
