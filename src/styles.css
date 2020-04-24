@@ -10,21 +10,23 @@ body {
         font-family: 'Volkhov', serif, 'Roboto', sans-serif;
 }
 
-h1, h2, h3, p, a, li {
-    color: var(--policeColor)
+h1, h2, h3 {
+  font-family: 'Roboto';
+  color: var(--policeColor)
+}
+
+p, a, li{
+  color: var(--policeColor)
 }
 
 h1 {
     font-size: 2.7vw;
-    font-family: 'Roboto';
 }
 h2 {
     font-size: 2.3vw;
-    font-family: 'Roboto';
 }
 h3 {
     font-size: 1.6vw;
-    font-family: 'Roboto';
 }
 p {
     font-size: 1.1vw;
