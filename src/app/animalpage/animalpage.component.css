@@ -43,7 +43,7 @@
     height: 180px;
     width: 180px;
     border-radius: 10px;
-    background-color: rgba(50,50,50, 0.4);
+    background-color: var(--CardsBackgroundColor);
 }
 .icon p {
     margin: 2px;
@@ -75,12 +75,13 @@
 }
 
 .readMoreLink {
-    color: rgba(240,135,35, 1);
+    color: var(--secondColor)
 }
 .readMoreLink:hover {
     text-decoration: underline;
 }
 
 p {
-    color: rgba(240, 240, 240, 0.5);
+    color: var(--policeColor);
+    opacity: 0.5;
 }
