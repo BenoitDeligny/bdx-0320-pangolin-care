@@ -18,6 +18,10 @@ export class ResearchService {
 
   allCountriesUrl = 'app/models/isocode-countries.json';
 
+  // descritpion WIKI_URL_LEO = 'https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=5&exlimit=1&titles=Lion&explaintext=1&formatversion=2';
+
+  // BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/${isocode}`;
+
   BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
