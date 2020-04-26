@@ -18,6 +18,10 @@ export class ResearchService {
 
   allCountriesUrl = 'app/models/isocode-countries.json';
 
+  // shortDescriptionURL = 'https://en.wikipedia.org/w/api.php?action=query&prop=description&titles=jaguar&descprefersource=local';
+
+  // imageAnimalWIKIURL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&titles=perroquet&prop=pageimages&piprop=original/thumbnail';
+
   // descritpion WIKI_URL_LEO = 'https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=5&exlimit=1&titles=Lion&explaintext=1&formatversion=2';
 
   // BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/${isocode}`;
