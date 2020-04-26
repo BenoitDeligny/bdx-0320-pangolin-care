@@ -18,14 +18,16 @@ export class ResearchService {
 
   allCountriesUrl = 'app/models/isocode-countries.json';
 
-  // shortDescriptionURL = 'https://en.wikipedia.org/w/api.php?action=query&prop=description&titles=jaguar&descprefersource=local';
+  // API RESTCOUNTRIES
+  BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/`;
 
-  // imageAnimalWIKIURL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&titles=perroquet&prop=pageimages&piprop=original/thumbnail';
+  // API WIKIPEDIA
+  BIG_IMG_URL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=original&titles=';
+  ICON_IMG_URL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=thumbnail&titles=';
+  DESCRIPTION_URL = 'https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=5&exlimit=1&explaintext=1&formatversion=2&titles=';
 
-  // descritpion WIKI_URL_LEO = 'https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=5&exlimit=1&titles=Lion&explaintext=1&formatversion=2';
 
-  // BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/${isocode}`;
-
+  // API REDLIST
   BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
@@ -49,8 +51,21 @@ export class ResearchService {
     return this.http.get<Country[]>(this.allCountriesUrl);
   }
 
-  getAnimalDescription(criteria: string): Observable<DescriptionAnswer> {
-    const url = this.BASE_URL + `species/narrative/${criteria}` + this.TOKEN;
-    return this.http.get<DescriptionAnswer>(url);
+  getDescription(criteria: string): Observable<any> {
+    const url = this.DESCRIPTION_URL + `${criteria}`;
+    return this.http.get<any>(url);
+  }
+
+  getFlagOfCountry(criteria: string): Observable<object> {
+    const url = this.BASE_COUNTRY_URL + `${criteria}`;
+    return this.http.get<object>(url);
+  }
+
+  getAnimalImg(criteria: string): Observable<any> {
+    return this.http.get<any>(this.BIG_IMG_URL + `${criteria}`);
+  }
+
+  getAnimalIcon(criteria: string): Observable<any> {
+    return this.http.get<any>(this.ICON_IMG_URL + `${criteria}`);
   }
 }
