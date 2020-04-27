@@ -31,13 +31,13 @@ export class ResearchService {
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
 
-  getAnimalByCountry(criteria: string): Observable<AnimalByCountryAnswer> {
-    const url = this.BASE_URL + `country/getspecies/${criteria}` + this.TOKEN;
+  getAnimalsByCountry(isocode: string): Observable<AnimalByCountryAnswer> {
+    const url = this.BASE_URL + `country/getspecies/${isocode}` + this.TOKEN;
     return this.http.get<AnimalByCountryAnswer>(url);
   }
 
-  getAnimalDetails(criteria: string): Observable<AnimalDetailsAnswer> {
-    const url = this.BASE_URL + `species/${criteria}` + this.TOKEN;
+  getAnimalDetails(scientificName: string): Observable<AnimalDetailsAnswer> {
+    const url = this.BASE_URL + `species/${scientificName}` + this.TOKEN;
     return this.http.get<AnimalDetailsAnswer>(url);
   }
 
