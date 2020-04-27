@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AnimalByCountryAnswer } from '../models/animal-by-country-answer';
+import { AnimalsByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 import { Country } from '../models/country-list';
@@ -31,9 +31,9 @@ export class ResearchService {
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
 
-  getAnimalsByCountry(isocode: string): Observable<AnimalByCountryAnswer> {
+  getAnimalsByCountry(isocode: string): Observable<AnimalsByCountryAnswer> {
     const url = this.BASE_URL + `country/getspecies/${isocode}` + this.TOKEN;
-    return this.http.get<AnimalByCountryAnswer>(url);
+    return this.http.get<AnimalsByCountryAnswer>(url);
   }
 
   getAnimalDetails(scientificName: string): Observable<AnimalDetailsAnswer> {
@@ -53,5 +53,13 @@ export class ResearchService {
   getAnimalDescription(criteria: string): Observable<DescriptionAnswer> {
     const url = this.BASE_URL + `species/narrative/${criteria}` + this.TOKEN;
     return this.http.get<DescriptionAnswer>(url);
+  }
+
+  getCountryFlag(isocode: string): Observable<any> {
+    return this.http.get<any>(this.BASE_COUNTRY_URL + isocode);
+  }
+
+  getCountryDescription(criteria: string): Observable<any> {
+    return this.http.get(this.DESCRIPTION_URL + criteria);
   }
 }

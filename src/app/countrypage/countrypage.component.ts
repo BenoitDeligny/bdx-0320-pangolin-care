@@ -15,6 +15,7 @@ export class CountrypageComponent implements OnInit {
 
   animalsByCountry: Animal[] = [];
   descriptions: Description[] = [];
+  flagUrl = '';
 
   constructor(private researchService: ResearchService, private route: ActivatedRoute) { }
 
@@ -22,6 +23,7 @@ export class CountrypageComponent implements OnInit {
 
     this.route.paramMap.subscribe((params) => {
       const isocode = params.get('isocode');
+
       this.researchService.getAnimalsByCountry(isocode).subscribe(
         (animalsByCountryFromServer: AnimalsByCountryAnswer) => {
           const result = animalsByCountryFromServer.result;
@@ -30,6 +32,12 @@ export class CountrypageComponent implements OnInit {
               this.animalsByCountry.push(animal);
             }
           }
+        }
+      );
+
+      this.researchService.getCountryFlag(isocode).subscribe(
+        (imageURL) => {
+          this.flagUrl = imageURL.flag;
         }
       );
     });

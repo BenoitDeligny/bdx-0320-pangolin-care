@@ -21,6 +21,10 @@
 .imgContainer {
     width: max-content;
 }
+.imgContainer img {
+    height: 200px;
+    width: 400px;
+}
 
 .countryDescription {
     width: auto;
