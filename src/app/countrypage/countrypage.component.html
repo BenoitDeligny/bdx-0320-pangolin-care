@@ -7,27 +7,31 @@
             <img src="https://via.placeholder.com/200x200">
         </div>
         <div class="countryDescription">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia delectus sint cupiditate. Numquam rem mollitia sunt cupiditate, tenetur assumenda aut animi culpa commodi pariatur minima, maiores cum provident iure nulla!</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci vel aut corrupti rerum est voluptates earum quod labore facilis, soluta magni repudiandae voluptatum eaque id impedit error esse inventore! Voluptas.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci vel aut corrupti rerum est voluptates earum quod labore facilis, soluta magni repudiandae voluptatum eaque id impedit error esse inventore! Voluptas.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia delectus sint cupiditate. Numquam rem
+                mollitia sunt cupiditate, tenetur assumenda aut animi culpa commodi pariatur minima, maiores cum
+                provident iure nulla!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci vel aut corrupti rerum est voluptates
+                earum quod labore facilis, soluta magni repudiandae voluptatum eaque id impedit error esse inventore!
+                Voluptas.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci vel aut corrupti rerum est voluptates
+                earum quod labore facilis, soluta magni repudiandae voluptatum eaque id impedit error esse inventore!
+                Voluptas.</p>
         </div>
     </div>
     <div class="speciesContainer">
-        <div class="specie" *ngFor="let animalOfCountry of animalsByCountry">
+        <div class="specie" *ngFor="let animal of animalDescriptions" (click)="searchAnimal(animal.name)">
 
             <div class="specieImg">
                 <img src="https://via.placeholder.com/100x100">
             </div>
             <div class="specieDescription">
-                <p>{{animalOfCountry.scientific_name}}</p>
+                <p>{{animal.name}}</p>
+                <p class="description-text">{{animal.info}}</p>
             </div>
-        </div>
-        <div *ngFor="let description of descriptions">
-          {{description.species_id}}
+
         </div>
 
     </div>
 
 
-</div>
 
