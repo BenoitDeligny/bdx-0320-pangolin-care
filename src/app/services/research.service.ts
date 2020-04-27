@@ -17,6 +17,16 @@ export class ResearchService {
 
   allCountriesUrl = 'app/models/isocode-countries.json';
 
+  // API RESTCOUNTRIES
+  BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/`;
+
+  // API WIKIPEDIA
+  BIG_IMG_URL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=original&titles=';
+  ICON_IMG_URL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=thumbnail&titles=';
+  DESCRIPTION_URL = 'https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exsentences=5&exlimit=1&explaintext=1&formatversion=2&titles=';
+
+
+  // API REDLIST
   BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
