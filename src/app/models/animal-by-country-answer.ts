@@ -1,6 +1,6 @@
 import { Animal } from './animal';
 
-export class AnimalByCountryAnswer {
+export class AnimalsByCountryAnswer {
     constructor(public result: Animal[]) {
     }
 }
