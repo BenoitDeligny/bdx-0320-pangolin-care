@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AnimalsByCountryAnswer } from '../models/animal-by-country-answer';
 import { DescriptionAnswer } from '../models/description-answer';
 import { Description } from '../models/description';
+import { Router } from '@angular/router';
 
 import isocodes from '../models/isocodes.json';
 
@@ -19,11 +20,16 @@ export class CountrypageComponent implements OnInit {
 
   animalsByCountry: Animal[] = [];
   descriptions: Description[] = [];
+
   flagUrl = '';
   countryDescription = '';
   animalsIcons: string[] = [];
 
-  constructor(private researchService: ResearchService, private route: ActivatedRoute) { }
+  animalDescriptions = [];
+  criteria = '';
+
+
+  constructor(private researchService: ResearchService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -41,6 +47,7 @@ export class CountrypageComponent implements OnInit {
           const result = animalsByCountryFromServer.result;
           for (const animal of result) {
             if (animal.category === 'CR' || animal.category === 'EW') {
+
               this.animalsByCountry.push(animal);
               this.researchService.getAnimalDetails(animal.scientific_name).subscribe(
                 (animalDetails) => {
@@ -48,6 +55,15 @@ export class CountrypageComponent implements OnInit {
                   for (const animalResult of nestedResult) {
                     console.log(animalResult.main_common_name);
                   }
+
+              this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
+                (descriptionsFromServer: DescriptionAnswer) => {
+                  const result2 = descriptionsFromServer.result;
+                  this.animalDescriptions.push({name: animal.scientific_name, info: result2[0].rationale});
+                  /* for (const description of result2) {
+                    this.animalDescriptions.push({info: description.species_id});
+                  } */
+
                 }
               );
             }
@@ -65,6 +81,10 @@ export class CountrypageComponent implements OnInit {
         this.countryDescription = data.query.pages[0].extract;
       }
     );
+  }
+
+  searchAnimal(name: string){
+    this.router.navigate(['/animals', name]);
   }
 }
 

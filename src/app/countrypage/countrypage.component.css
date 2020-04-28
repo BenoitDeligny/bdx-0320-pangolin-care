@@ -48,3 +48,11 @@
     margin-top: 10px;
     margin-right: 10px;
 }
+
+.description-text{
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
