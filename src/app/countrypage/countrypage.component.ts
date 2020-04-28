@@ -49,12 +49,16 @@ export class CountrypageComponent implements OnInit {
             if (animal.category === 'CR' || animal.category === 'EW') {
 
               this.animalsByCountry.push(animal);
-              this.researchService.getAnimalDetails(animal.scientific_name).subscribe(
-                (animalDetails) => {
-                  const nestedResult = animalDetails.result;
-                  for (const animalResult of nestedResult) {
-                    console.log(animalResult.main_common_name);
-                  }
+
+              this.researchService.getAnimalUid(animal.scientific_name).subscribe(
+                (animalUid) => {
+                  const animalNameUid = animalUid.result[0].canonicalName.uid;
+                  this.researchService.getAnimalImagesUid(animalNameUid).subscribe(
+                    (imagesUid) => {
+                      const animalImagesIud = imagesUid.result.same[0];
+                      console.log(animalUid);
+                    }
+                  );
                 });
               this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
                 (descriptionsFromServer: DescriptionAnswer) => {
