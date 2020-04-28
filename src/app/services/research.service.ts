@@ -21,6 +21,11 @@ export class ResearchService {
   // API RESTCOUNTRIES
   BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/`;
 
+  // API ICONES ANIMALS
+  UID_BY_NAME_URL = 'http://phylopic.org/api/a/name/search?text=';
+  IMG_BY_UID_URL = 'http://phylopic.org/api/a/name/' + /*UID*/ + '/images';
+  IMG_URL = 'http://phylopic.org/assets/images/submissions/' + /*UID*/ + '.thumb.png';
+
   // API WIKIPEDIA
   BIG_IMG_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&format=json&prop=pageimages&piprop=original&titles=';
   ICON_IMG_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&format=json&prop=pageimages&piprop=thumbnail&titles=';
