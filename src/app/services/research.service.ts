@@ -22,9 +22,9 @@ export class ResearchService {
   BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/`;
 
   // API WIKIPEDIA
-  BIG_IMG_URL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=original&titles=';
-  ICON_IMG_URL = 'https://fr.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=thumbnail&titles=';
-  DESCRIPTION_URL = 'https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&exsentences=5&exlimit=1&explaintext=1&formatversion=2&titles=';
+  BIG_IMG_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&format=json&prop=pageimages&piprop=original&titles=';
+  ICON_IMG_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&format=json&prop=pageimages&piprop=thumbnail&titles=';
+  DESCRIPTION_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&prop=extracts&exsentences=5&exlimit=1&explaintext=1&formatversion=2&titles=';
 
 
   // API REDLIST
@@ -52,7 +52,7 @@ export class ResearchService {
   }
 
   getAnimalDescription(criteria: string): Observable<any> {
-    const url = this.DESCRIPTION_URL + `${criteria}`;
+    const url = this.BASE_URL + `species/narrative/${criteria}` + this.TOKEN;
     return this.http.get<any>(url);
   }
 
