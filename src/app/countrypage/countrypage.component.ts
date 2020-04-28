@@ -55,15 +55,14 @@ export class CountrypageComponent implements OnInit {
                   for (const animalResult of nestedResult) {
                     console.log(animalResult.main_common_name);
                   }
-
+                });
               this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
                 (descriptionsFromServer: DescriptionAnswer) => {
                   const result2 = descriptionsFromServer.result;
-                  this.animalDescriptions.push({name: animal.scientific_name, info: result2[0].rationale});
+                  this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
                   /* for (const description of result2) {
                     this.animalDescriptions.push({info: description.species_id});
                   } */
-
                 }
               );
             }
@@ -83,7 +82,7 @@ export class CountrypageComponent implements OnInit {
     );
   }
 
-  searchAnimal(name: string){
+  searchAnimal(name: string) {
     this.router.navigate(['/animals', name]);
   }
 }
