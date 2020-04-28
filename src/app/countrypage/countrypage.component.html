@@ -7,15 +7,13 @@
             <img src="{{flagUrl}}">
         </div>
         <div class="countryDescription">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia delectus sint cupiditate. Numquam rem mollitia sunt cupiditate, tenetur assumenda aut animi culpa commodi pariatur minima, maiores cum provident iure nulla!</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci vel aut corrupti rerum est voluptates earum quod labore facilis, soluta magni repudiandae voluptatum eaque id impedit error esse inventore! Voluptas.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci vel aut corrupti rerum est voluptates earum quod labore facilis, soluta magni repudiandae voluptatum eaque id impedit error esse inventore! Voluptas.</p>
+            <p> {{countryDescription}} </p>
         </div>
     </div>
     <div class="speciesContainer">
         <div class="specie" *ngFor="let animalOfCountry of animalsByCountry">
-            <div class="specieImg">
-                <img src="https://via.placeholder.com/100x100">
+            <div class="specieImg" *ngFor="let icon of animalsIcons">
+                <img src="{{icon}}">
             </div>
             <div class="specieDescription">
                 <p>{{animalOfCountry.scientific_name}}</p>
