@@ -54,9 +54,13 @@ export class CountrypageComponent implements OnInit {
                 (animalUid) => {
                   const animalNameUid = animalUid.result[0].canonicalName.uid;
                   this.researchService.getAnimalImagesUid(animalNameUid).subscribe(
-                    (imagesUid) => {
-                      const animalImagesIud = imagesUid.result.same[0];
-                      console.log(animalUid);
+                    () => {
+                      const animalImagesIud = animalUid.result[0].canonicalName.uid;
+                      this.researchService.getAnimalIcon(animalImagesIud).subscribe(
+                        (imgUrl) => {
+                          this.animalsIcons.push(imgUrl);
+                        }
+                      );
                     }
                   );
                 });

@@ -68,6 +68,9 @@ export class ResearchService {
   getAnimalImagesUid(uid: number): Observable<any> {
     return this.http.get<any>(this.IMG_BY_UID_URL + `${uid}/images`);
   }
+  getAnimalIcon(uid: number): Observable<any> {
+    return this.http.get<any>(this.IMG_URL + `${uid}.thumb.png`);
+  }
 
   getCountryFlag(isocode: string): Observable<any> {
     return this.http.get<any>(this.BASE_COUNTRY_URL + isocode);
