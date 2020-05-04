@@ -50,12 +50,11 @@ export class CountrypageComponent implements OnInit {
             if (animal.category === 'CR' || animal.category === 'EW') {
 
               this.animalsByCountry.push(animal);
-              
               this.researchService.getAnimalDetails(animal.scientific_name).subscribe(
                 (animalDetails) => {
                   const nestedResult = animalDetails.result[0].main_common_name;
 
-              this.researchService.getAnimalUid(animal.scientific_name).subscribe(
+                  this.researchService.getAnimalUid(animal.scientific_name).subscribe(
                 (animalUid) => {
                   const animalNameUid = animalUid.result[0].canonicalName.uid;
                   this.researchService.getAnimalImagesUid(animalNameUid).subscribe(
@@ -69,7 +68,7 @@ export class CountrypageComponent implements OnInit {
                     }
                   );
                 });
-              this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
+                  this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
                 (descriptionsFromServer: DescriptionAnswer) => {
                   const result2 = descriptionsFromServer.result;
                   this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
@@ -81,10 +80,10 @@ export class CountrypageComponent implements OnInit {
                   } */
                 }
               );
-            }
+            });
           }
         }
-      );
+        });
       this.researchService.getCountryFlag(isocode).subscribe(
         (imageURL) => {
           this.flagUrl = imageURL.flag;
