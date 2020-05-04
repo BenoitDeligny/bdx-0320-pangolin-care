@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 am4core.useTheme(am4themes_animated);
 
 @Component({
-  selector: 'app-root',
+  selector: 'pgc-worldmap',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class WorldMapComponent implements AfterViewInit, OnDestroy {
 
   private chart: am4maps.MapChart;
 
