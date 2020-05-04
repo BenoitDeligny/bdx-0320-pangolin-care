@@ -26,6 +26,7 @@ export class CountrypageComponent implements OnInit {
   animalsIcons: string[] = [];
 
   animalDescriptions = [];
+  animalDescription = '';
   criteria = '';
 
 
@@ -49,6 +50,10 @@ export class CountrypageComponent implements OnInit {
             if (animal.category === 'CR' || animal.category === 'EW') {
 
               this.animalsByCountry.push(animal);
+              
+              this.researchService.getAnimalDetails(animal.scientific_name).subscribe(
+                (animalDetails) => {
+                  const nestedResult = animalDetails.result[0].main_common_name;
 
               this.researchService.getAnimalUid(animal.scientific_name).subscribe(
                 (animalUid) => {
@@ -68,6 +73,9 @@ export class CountrypageComponent implements OnInit {
                 (descriptionsFromServer: DescriptionAnswer) => {
                   const result2 = descriptionsFromServer.result;
                   this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
+                  for (const animalDescription of this.animalDescriptions) {
+                    this.animalDescription = animalDescription.info;
+                  }
                   /* for (const description of result2) {
                     this.animalDescriptions.push({info: description.species_id});
                   } */
