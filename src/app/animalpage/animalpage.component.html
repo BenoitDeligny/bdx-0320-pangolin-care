@@ -10,7 +10,9 @@
     <div class="animalIcons">
       <div class="icon">
         <p>Category</p>
-        <img src="assets/img/3-Vulnerable-VU.svg">
+        <img *ngIf="category == 'CR' " src="assets/img/5-CriticallyEndangered-CR.svg" >
+        <img *ngIf="category == 'EW' " src="assets/img/6-ExtinctInTheWild-EW.svg" >
+        <img *ngIf="category == 'VU' " src="assets/img/3-Vulnerable-VU.svg">
       </div>
       <div class="icon">
         <p>Population trend</p>

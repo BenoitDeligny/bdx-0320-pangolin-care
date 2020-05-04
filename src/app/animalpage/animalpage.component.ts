@@ -17,6 +17,7 @@ export class AnimalpageComponent implements OnInit {
   animalsDescriptions: Description[] = [];
   descriptionString = '';
   arrow: string;
+  category: string;
 
   constructor(private route: ActivatedRoute, private researchService: ResearchService) { }
 
@@ -28,7 +29,8 @@ export class AnimalpageComponent implements OnInit {
       (animaldetailsanswer: AnimalDetailsAnswer) => {
         this.animals = animaldetailsanswer.result;
         for (const animal of this.animals){
-          return this.arrow = animal.population_trend;
+          this.arrow = animal.population_trend;
+          this.category = animal.category;
         }
     });
 
