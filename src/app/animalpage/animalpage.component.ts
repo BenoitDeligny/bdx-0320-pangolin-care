@@ -14,12 +14,6 @@ export class AnimalpageComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const name = params.get('name');
-
-      this.researchService.getAnimalDetails(name).subscribe(
-        (animal) => {
-          console.log(animal);
-        }
-      );
     });
   }
 
