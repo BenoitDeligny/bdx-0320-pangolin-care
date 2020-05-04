@@ -32,10 +32,10 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
     // Configure series
     const polygonTemplate = polygonSeries.mapPolygons.template; // Get template for polygon series
     polygonTemplate.tooltipText = '{name}'; // Set tooltype property
-    polygonTemplate.polygon.fillOpacity = 0.6;
-    polygonTemplate.fill = am4core.color('#74B267');
+    polygonTemplate.polygon.fillOpacity = 1;
+    polygonTemplate.fill = am4core.color('#FF8F26');
     const hs = polygonTemplate.states.create('hover');
-    hs.properties.fill = am4core.color('#74X999');
+    hs.properties.fill = am4core.color('#F0F0F0');
 
     // LOG testing
     polygonTemplate.events.on('hit', (country) => {
@@ -48,8 +48,7 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
           countryProp.push(countryData[element]);
         }
       }
-
-      console.log(countryProp[3]);
+      this.router.navigate(['/countries', countryProp[1]]);
 
     });
 
