@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import { AnimalpageComponent } from './animalpage/animalpage.component';
+import { WorldMapComponent } from './world-map/world-map.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AnimalpageComponent } from './animalpage/animalpage.component';
     NavbarComponent,
     FooterComponent,
     SearchComponent,
-    AnimalpageComponent
+    AnimalpageComponent,
+    WorldMapComponent
 
   ],
   imports: [
