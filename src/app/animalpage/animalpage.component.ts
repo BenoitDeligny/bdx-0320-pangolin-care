@@ -6,6 +6,7 @@ import { Animal } from '../models/animal';
 import { DescriptionAnswer } from '../models/description-answer';
 import { Description } from '../models/description';
 
+
 @Component({
   selector: 'pgc-animalpage',
   templateUrl: './animalpage.component.html',

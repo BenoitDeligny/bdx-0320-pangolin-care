@@ -21,9 +21,12 @@ export class ResearchService {
   // API RESTCOUNTRIES
   BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/`;
 
+  // API PHYLOPIC
+  UID_BY_NAME_URL = 'http://phylopic.org/api/a/name/search?text=';
+  IMG_BY_UID_URL = 'http://phylopic.org/api/a/name/' /*+ UID + '/images'*/;
+  IMG_URL = 'http://phylopic.org/assets/images/submissions/' /*+ UID + '.thumb.png'*/;
+
   // API WIKIPEDIA
-  BIG_IMG_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&format=json&prop=pageimages&piprop=original&titles=';
-  ICON_IMG_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&format=json&prop=pageimages&piprop=thumbnail&titles=';
   DESCRIPTION_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&prop=extracts&format=json&exsentences=5&exlimit=1&explaintext=1&formatversion=2&titles=';
 
   // API REDLIST
@@ -59,12 +62,14 @@ export class ResearchService {
     return this.http.get<object>(url);
   }
 
-  getAnimalImg(criteria: string): Observable<any> {
-    return this.http.get<any>(this.BIG_IMG_URL + `${criteria}`);
+  getAnimalUid(scientificName: string): Observable<any> {
+    return this.http.get<any>(this.UID_BY_NAME_URL + `${scientificName}`);
   }
-
-  getAnimalIcon(criteria: string): Observable<any> {
-    return this.http.get<any>(this.ICON_IMG_URL + `${criteria}`);
+  getAnimalImagesUid(uid: number): Observable<any> {
+    return this.http.get<any>(this.IMG_BY_UID_URL + `${uid}/images`);
+  }
+  getAnimalIcon(uid: number): Observable<any> {
+    return this.http.get<any>(this.IMG_URL + `${uid}.thumb.png`);
   }
 
   getCountryFlag(isocode: string): Observable<any> {
@@ -73,9 +78,5 @@ export class ResearchService {
 
   getCountryDescription(countryName: string): Observable<any> {
     return this.http.get(this.DESCRIPTION_URL + `${countryName}`);
-  }
-
-  getAnimalsIcons(commonName: string): Observable<any> {
-    return this.http.get<any>(this.ICON_IMG_URL + commonName);
   }
 }

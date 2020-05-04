@@ -29,7 +29,7 @@
     },
     {
         "isocode": "SY",
-        "country": "Syrian Arab Republic"
+        "country": "Syria"
     },
     {
         "isocode": "TJ",
@@ -45,7 +45,7 @@
     },
     {
         "isocode": "IR",
-        "country": "Iran, Islamic Republic of"
+        "country": "Iran"
     },
     {
         "isocode": "IQ",
@@ -129,7 +129,7 @@
     },
     {
         "isocode": "LA",
-        "country": "Lao People's Democratic Republic"
+        "country": "Laos"
     },
     {
         "isocode": "YE",
@@ -249,7 +249,7 @@
     },
     {
         "isocode": "VA",
-        "country": "Holy See (Vatican City State)"
+        "country": "Holy See"
     },
     {
         "isocode": "MT",
@@ -357,7 +357,7 @@
     },
     {
         "isocode": "SJ",
-        "country": "Svalbard and Jan Mayen"
+        "country": "Svalbard"
     },
     {
         "isocode": "SE",
@@ -409,7 +409,7 @@
     },
     {
         "isocode": "FK",
-        "country": "Falkland Islands (Malvinas)"
+        "country": "Falkland Islands"
     },
     {
         "isocode": "GF",
@@ -433,11 +433,11 @@
     },
     {
         "isocode": "VG",
-        "country": "Virgin Islands, British"
+        "country": "British Virgin Islands"
     },
     {
         "isocode": "VI",
-        "country": "Virgin Islands, U.S."
+        "country": "United States Virgin Islands"
     },
     {
         "isocode": "GP",
@@ -465,7 +465,7 @@
     },
     {
         "isocode": "VC",
-        "country": "Saint Vincent and the Grenadines"
+        "country": "Saint Vincent"
     },
     {
         "isocode": "BB",
@@ -641,7 +641,7 @@
     },
     {
         "isocode": "CD",
-        "country": "Congo, The Democratic Republic of the"
+        "country": "Democratic Republic of the Congo"
     },
     {
         "isocode": "CI",
@@ -681,7 +681,7 @@
     },
     {
         "isocode": "TZ",
-        "country": "Tanzania, United Republic of"
+        "country": "Tanzania"
     },
     {
         "isocode": "TG",
@@ -757,11 +757,11 @@
     },
     {
         "isocode": "KP",
-        "country": "Korea, Democratic People's Republic of"
+        "country": "North Korea"
     },
     {
         "isocode": "KR",
-        "country": "Korea, Republic of"
+        "country": "South Korea"
     },
     {
         "isocode": "PM",
@@ -917,7 +917,7 @@
     },
     {
         "isocode": "RU",
-        "country": "Russian Federation"
+        "country": "Russia"
     },
     {
         "isocode": "UA",
@@ -929,7 +929,7 @@
     },
     {
         "isocode": "TW",
-        "country": "Taiwan, Province of China"
+        "country": "Taiwan"
     },
     {
         "isocode": "JP",
@@ -945,7 +945,7 @@
     },
     {
         "isocode": "SH",
-        "country": "Saint Helena, Ascension and Tristan da Cunha"
+        "country": "Saint Helena"
     },
     {
         "isocode": "CW",
@@ -953,11 +953,11 @@
     },
     {
         "isocode": "SX",
-        "country": "Sint Maarten (Dutch part)"
+        "country": "Sint Maarten"
     },
     {
         "isocode": "BQ",
-        "country": "Bonaire, Sint Eustatius and Saba"
+        "country": "Bonaire"
     },
     {
         "isocode": "SS",
@@ -969,15 +969,15 @@
     },
     {
         "isocode": "FM",
-        "country": "Micronesia, Federated States of "
+        "country": "Micronesia"
     },
     {
         "isocode": "VE",
-        "country": "Venezuela, Bolivarian Republic of"
+        "country": "Venezuela"
     },
     {
         "isocode": "PS",
-        "country": "Palestine, State of"
+        "country": "Palestine"
     },
     {
         "isocode": "CZ",
@@ -993,7 +993,7 @@
     },
     {
         "isocode": "ST",
-        "country": "Sao Tome and Principe"
+        "country": "Sao Tome"
     },
     {
         "isocode": "MK",
@@ -1001,6 +1001,6 @@
     },
     {
         "isocode": "BO",
-        "country": "Bolivia, Plurinational State of"
+        "country": "Bolivia"
     }
 ]
