@@ -59,7 +59,7 @@ export class CountrypageComponent implements OnInit {
                   const result2 = descriptionsFromServer.result;
                   this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
                   for (const animalDescription of this.animalDescriptions) {
-                    this.animalDescription = animalDescription.rationale;
+                    this.animalDescription = animalDescription.info;
                   }
                   /* for (const description of result2) {
                     this.animalDescriptions.push({info: description.species_id});
