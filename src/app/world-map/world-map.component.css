@@ -1,6 +1,13 @@
-div {
+.mapContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+}
+.chartdiv {
     font-size: 0.8em;
-    width: 100%;
+    width: 70%;
     height: 700px;
     text-align: center;
 }

@@ -9,8 +9,8 @@ am4core.useTheme(am4themes_animated);
 
 @Component({
   selector: 'pgc-worldmap',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './world-map.component.html',
+  styleUrls: ['./world-map.component.scss']
 })
 export class WorldMapComponent implements AfterViewInit, OnDestroy {
 
