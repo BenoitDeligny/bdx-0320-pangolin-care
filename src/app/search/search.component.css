@@ -1,3 +1,14 @@
+.logo {
+    position: absolute;
+    top: 1%;
+    left: 3%;
+    height: 60px;
+    width: 60px;
+}
+.logo:focus {
+    outline: none;
+}
+
 .searchbarContainer {
     display: flex;
     justify-content: center;

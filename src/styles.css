@@ -10,12 +10,13 @@ body {
         font-family: 'Volkhov', serif, 'Roboto', sans-serif;
 }
 
-h1, h2, h3 {
-  font-family: 'Roboto';
+h1, h2, h3, button {
+  font-family: 'Volkhov';
   color: var(--policeColor)
 }
 
-p, a, li{
+p, a, li {
+  font-family: 'Volkhov';
   color: var(--policeColor)
 }
 
@@ -28,7 +29,7 @@ h2 {
 h3 {
     font-size: 1.6vw;
 }
-p {
+p, button {
     font-size: 1.1vw;
 }
 a {
