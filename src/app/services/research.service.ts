@@ -33,6 +33,7 @@ export class ResearchService {
   BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
+
   getAnimalsByCountry(isocode: string): Observable<AnimalsByCountryAnswer> {
     const url = this.BASE_URL + `country/getspecies/${isocode}` + this.TOKEN;
     return this.http.get<AnimalsByCountryAnswer>(url);
