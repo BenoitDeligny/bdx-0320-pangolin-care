@@ -13,8 +13,4 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  goMap() {
-    this.router.navigate(['/countries']);
-  }
 }
