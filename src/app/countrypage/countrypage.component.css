@@ -33,6 +33,7 @@
     align-items: center;
     flex-wrap: wrap;
     width: 66%;
+    margin-top: 10px;
 }
 
 .specie {
@@ -40,13 +41,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 400px;
     width: 45%;
     text-align: center;
+    margin-top: 50px;
 }
 
 .specie * {
-    margin: 5px;
+    margin: 10px;
     padding: 0px;
 }
 .specie h3 {
@@ -61,4 +63,11 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+}
+
+.description-text{
+  display: flex;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
