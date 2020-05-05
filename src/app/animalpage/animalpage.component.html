@@ -10,14 +10,15 @@
     <div class="animalIcons">
       <div class="icon">
         <p>Category</p>
-        <img *ngIf="category == 'CR' " src="assets/img/5-CriticallyEndangered-CR.svg" >
-        <img *ngIf="category == 'EW' " src="assets/img/6-ExtinctInTheWild-EW.svg" >
-        <img *ngIf="category == 'VU' " src="assets/img/3-Vulnerable-VU.svg">
+        <img *ngIf="category === 'CR' " src="assets/img/5-CriticallyEndangered-CR.svg" >
+        <img *ngIf="category === 'EW' " src="assets/img/6-ExtinctInTheWild-EW.svg" >
+        <img *ngIf="category === 'VU' " src="assets/img/3-Vulnerable-VU.svg">
       </div>
       <div class="icon">
         <p>Population trend</p>
-        <img *ngIf="arrow == 'Increasing'" src="assets/img/GreenArrow.png" >
-        <img *ngIf="arrow == 'Decreasing'" src="assets/img/RedArrow.png" >
+        <img *ngIf="arrow != 'Increasing' && arrow != 'Decreasing' " src="assets/img/Dunno.png" >
+        <img *ngIf="arrow === 'Increasing'" src="assets/img/GreenArrow.png" >
+        <img *ngIf="arrow === 'Decreasing'" src="assets/img/RedArrow.png" >
       </div>
       <div class="icon">
         <p>Population number</p>
