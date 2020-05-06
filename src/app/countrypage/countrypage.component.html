@@ -10,7 +10,6 @@
 
     <div class="speciesContainer">
         <div class="specie" *ngFor="let animal of animalDescriptions" (click)="searchAnimal(animal.name)">
-            <img src="https://via.placeholder.com/100x100">
             <h3>{{animal.name}}</h3>
             <p class="description-text" [innerHTML]="animal.info"></p>
         </div>

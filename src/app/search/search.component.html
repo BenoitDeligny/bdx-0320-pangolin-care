@@ -11,4 +11,7 @@
             </div>
         </div>
     </div>
+    <div>
+      <a class="searchbar-a" [routerLink]="['/countries']" *ngIf="router.url !== '/countries'">Or use interactive map</a>
+    </div>
 </div>

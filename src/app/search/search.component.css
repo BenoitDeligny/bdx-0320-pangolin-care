@@ -5,6 +5,11 @@
     height: 60px;
     width: 60px;
 }
+
+.logo:hover{
+  cursor: pointer;
+}
+
 .logo:focus {
     outline: none;
 }
@@ -75,4 +80,14 @@ label{
     color: var(--secondColor);
     font-size: 1.2vw;
     margin-right: 10px;
+}
+
+.searchbar-a{
+  color: rgba(240, 240, 240, 0.6);
+  margin-left: 15px;
+  font-style: italic;
+}
+.searchbar-a:hover{
+  color: var(--secondColor);
+  font-style: normal;
 }
