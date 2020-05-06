@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
 
   searchResults: Country[] = [];
 
-  constructor(private researchService: ResearchService, private router: Router) { }
+  constructor(private researchService: ResearchService, public router: Router) { }
 
   ngOnInit(): void {
     this.researchService.getArrayOfCountries()
