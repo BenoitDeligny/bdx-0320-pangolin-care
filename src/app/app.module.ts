@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import { AnimalpageComponent } from './animalpage/animalpage.component';
 import { WorldMapComponent } from './world-map/world-map.component';
+import { ImgFormComponent } from './img-form/img-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WorldMapComponent } from './world-map/world-map.component';
     FooterComponent,
     SearchComponent,
     AnimalpageComponent,
-    WorldMapComponent
+    WorldMapComponent,
+    ImgFormComponent
 
   ],
   imports: [

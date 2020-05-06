@@ -1,10 +1,11 @@
+<pgc-img-form *ngIf="displayDarkness" (imageUrl)="onSendImg($event)"></pgc-img-form>
 <div *ngFor="let animal of animals">
   <div class="overallContainer">
     <div class="animalImg">
-      <img src="https://via.placeholder.com/400x400">
+      <img *ngIf="imageUrl === ''" src="https://via.placeholder.com/400x400">
       <div class="addImgContainer">
         <p><em>No picture ? You can add one!</em></p>
-        <button class="addImgButton">Add picture</button>
+        <button class="addImgButton" (click)="displayDarkness = true">Add picture</button>
       </div>
     </div>
     <div class="animalResume">
