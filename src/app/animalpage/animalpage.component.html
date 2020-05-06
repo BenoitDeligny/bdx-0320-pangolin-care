@@ -1,41 +1,46 @@
+<pgc-img-form *ngIf="displayDarkness" (imageUrl)="onSendImg($event)"></pgc-img-form>
 <div *ngFor="let animal of animals">
-<div class="overallContainer">
-<!--   <div class="animalImg">
-    <img src="https://via.placeholder.com/600x600">
+  <div class="overallContainer">
+    <div class="animalImg">
+      <img *ngIf="imageUrl === ''" src="https://via.placeholder.com/400x400">
+      <div class="addImgContainer">
+        <p><em>No picture ? You can add one!</em></p>
+        <button class="addImgButton" (click)="displayDarkness = true">Add picture</button>
+      </div>
+    </div>
+    <div class="animalResume">
+      <div class="animalTitle">
+        <h1>{{animal.main_common_name}}</h1>
+      </div>
+      <div class="animalIcons">
+        <div class="icon">
+          <p>Category</p>
+          <img *ngIf="category === 'CR' " src="assets/img/5-CriticallyEndangered-CR.svg">
+          <img *ngIf="category === 'EW' " src="assets/img/6-ExtinctInTheWild-EW.svg">
+          <img *ngIf="category === 'VU' " src="assets/img/3-Vulnerable-VU.svg">
+        </div>
+        <div class="icon">
+          <p>Population trend</p>
+          <img *ngIf="arrow != 'Increasing' && arrow != 'Decreasing' " src="assets/img/Dunno.png">
+          <img *ngIf="arrow === 'Increasing'" src="assets/img/GreenArrow.png">
+          <img *ngIf="arrow === 'Decreasing'" src="assets/img/RedArrow.png">
+        </div>
+      </div>
+      <div class="animalDetails">
+        <div>
+          <h3>Scientific name</h3>
+          <p>{{animal.scientific_name}}</p>
+        </div>
+        <div>
+          <h3>Class</h3>
+          <p>{{animal.class}}</p>
+        </div>
+      </div>
+    </div>
   </div>
- -->  <div class="animalResume">
-    <div class="animalTitle">
-      <h1>{{animal.main_common_name}}</h1>
-    </div>
-    <div class="animalIcons">
-      <div class="icon">
-        <p>Category</p>
-        <img *ngIf="category === 'CR' " src="assets/img/5-CriticallyEndangered-CR.svg" >
-        <img *ngIf="category === 'EW' " src="assets/img/6-ExtinctInTheWild-EW.svg" >
-        <img *ngIf="category === 'VU' " src="assets/img/3-Vulnerable-VU.svg">
-      </div>
-      <div class="icon">
-        <p>Population trend</p>
-        <img *ngIf="arrow != 'Increasing' && arrow != 'Decreasing' " src="assets/img/Dunno.png" >
-        <img *ngIf="arrow === 'Increasing'" src="assets/img/GreenArrow.png" >
-        <img *ngIf="arrow === 'Decreasing'" src="assets/img/RedArrow.png" >
-      </div>
-    </div>
-    <div class="animalDetails">
-      <div>
-        <h3>Scientific name</h3>
-      <p>{{animal.scientific_name}}</p>
-      </div>
-      <div>
-        <h3>Class</h3>
-        <p>{{animal.class}}</p>
-      </div>
-    </div>
-    <div class="descriptionContainer">
-      <div class="animalDescription">
-        <p [innerHTML]="descriptionString"></p>
-      </div>
+  <div class="descriptionContainer">
+    <div class="animalDescription">
+      <p [innerHTML]="descriptionString"></p>
     </div>
   </div>
-</div>
 </div>

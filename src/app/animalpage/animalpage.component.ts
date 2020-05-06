@@ -10,7 +10,7 @@ import { Description } from '../models/description';
 @Component({
   selector: 'pgc-animalpage',
   templateUrl: './animalpage.component.html',
-  styleUrls: ['./animalpage.component.css']
+  styleUrls: ['./animalpage.component.scss']
 })
 export class AnimalpageComponent implements OnInit {
 
@@ -20,6 +20,9 @@ export class AnimalpageComponent implements OnInit {
   arrow: string;
   category: string;
 
+  displayDarkness = false;
+  imageUrl = '';
+
   constructor(private route: ActivatedRoute, private researchService: ResearchService) { }
 
   ngOnInit(): void {
@@ -27,13 +30,13 @@ export class AnimalpageComponent implements OnInit {
       const name = params.get('name');
 
       this.researchService.getAnimalDetails(name).subscribe(
-      (animaldetailsanswer: AnimalDetailsAnswer) => {
-        this.animals = animaldetailsanswer.result;
-        for (const animal of this.animals){
-          this.arrow = animal.population_trend;
-          this.category = animal.category;
-        }
-    });
+        (animaldetailsanswer: AnimalDetailsAnswer) => {
+          this.animals = animaldetailsanswer.result;
+          for (const animal of this.animals) {
+            this.arrow = animal.population_trend;
+            this.category = animal.category;
+          }
+        });
 
       this.researchService.getAnimalDescription(name).subscribe(
         (animalDescription: DescriptionAnswer) => {
@@ -43,6 +46,11 @@ export class AnimalpageComponent implements OnInit {
           }
         }
       );
-  });
-}
+    });
+  }
+
+  onSendImg($event: string) {
+    this.displayDarkness = false;
+    this.imageUrl = $event;
+  }
 }
