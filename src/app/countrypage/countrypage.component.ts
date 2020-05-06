@@ -12,7 +12,7 @@ import isocodes from '../models/isocodes.json';
 @Component({
   selector: 'pgc-countrypage',
   templateUrl: './countrypage.component.html',
-  styleUrls: ['./countrypage.component.css']
+  styleUrls: ['./countrypage.component.scss']
 })
 export class CountrypageComponent implements OnInit {
   countryCompleteName = '';
