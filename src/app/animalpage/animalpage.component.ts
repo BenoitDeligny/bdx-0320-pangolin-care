@@ -10,7 +10,7 @@ import { Description } from '../models/description';
 @Component({
   selector: 'pgc-animalpage',
   templateUrl: './animalpage.component.html',
-  styleUrls: ['./animalpage.component.css']
+  styleUrls: ['./animalpage.component.scss']
 })
 export class AnimalpageComponent implements OnInit {
 
