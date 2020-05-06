@@ -4,6 +4,7 @@
             <h3 for="addImg">Choose an image</h3>
             <input [(ngModel)]="imgUrl" type="text" name="addImg" placeholder="Link">
             <button (click)="sendImage(imgUrl, false)">Add</button>
+            <button (click)="sendImage('', false)">Cancel</button>
         </div>
     </div>
 </div>
