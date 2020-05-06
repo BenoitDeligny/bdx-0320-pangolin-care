@@ -3,6 +3,7 @@
   <div class="overallContainer">
     <div class="animalImg">
       <img *ngIf="imageUrl === ''" src="https://via.placeholder.com/400x400">
+      <img *ngIf="imageUrl !== ''" src="{{imageUrl}}">
       <div class="addImgContainer">
         <p><em>No picture ? You can add one!</em></p>
         <button class="addImgButton" (click)="displayDarkness = true">Add picture</button>

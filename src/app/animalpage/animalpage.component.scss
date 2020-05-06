@@ -10,15 +10,19 @@
     align-items: center;
 }
 
+.animalImg img {
+    height: 400px;
+    width: 400px;
+}
+
 .addImgButton {
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 5px;
     text-align: center;
     cursor: pointer;
     color: var(--secondColor);
-    background-color: var(--policeColor);
+    background-color: var(--CardsBackgroundColor);
     border: 1px solid var(--secondColor);
-    border-radius: 1rem;
+    border-radius: 10px;
     transition: 200ms;
 
     &:hover {
