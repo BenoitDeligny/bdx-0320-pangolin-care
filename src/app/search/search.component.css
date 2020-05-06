@@ -7,7 +7,7 @@
 }
 
 .logo:hover{
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .logo:focus {
@@ -83,11 +83,11 @@ label{
 }
 
 .searchbar-a{
-  color: rgba(240, 240, 240, 0.6);
-  margin-left: 15px;
-  font-style: italic;
+    color: rgba(240, 240, 240, 0.6);
+    margin-left: 25px;
+    font-style: italic;
 }
 .searchbar-a:hover{
-  color: var(--secondColor);
-  font-style: normal;
+    color: var(--secondColor);
+    font-style: normal;
 }
