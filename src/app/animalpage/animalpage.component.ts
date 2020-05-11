@@ -22,6 +22,7 @@ export class AnimalpageComponent implements OnInit {
 
   displayDarkness = false;
   imageUrl = '';
+  currentAnimal: Animal;
 
   constructor(private route: ActivatedRoute, private researchService: ResearchService) { }
 
@@ -35,6 +36,7 @@ export class AnimalpageComponent implements OnInit {
           for (const animal of this.animals) {
             this.arrow = animal.population_trend;
             this.category = animal.category;
+            this.currentAnimal = animal;
           }
         });
 
@@ -46,11 +48,24 @@ export class AnimalpageComponent implements OnInit {
           }
         }
       );
+
+      this.researchService.getAnimalImageByName(name).subscribe(
+        (data) => {
+          this.imageUrl = data.imageUrl;
+        }
+      );
     });
   }
 
   onSendImg($event: string) {
     this.displayDarkness = false;
     this.imageUrl = $event;
+    this.currentAnimal.imageUrl = $event;
+    this.researchService.postAnimalImg(this.currentAnimal).subscribe(
+      () => {
+        // image ne s'affiche
+        // name API != name class
+      }
+    );
   }
 }

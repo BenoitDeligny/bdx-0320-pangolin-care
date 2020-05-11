@@ -22,9 +22,9 @@ export class ResearchService {
   BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/`;
 
   // API PHYLOPIC
-  UID_BY_NAME_URL = 'http://phylopic.org/api/a/name/search?text=';
-  IMG_BY_UID_URL = 'http://phylopic.org/api/a/name/' /*+ UID + '/images'*/;
-  IMG_URL = 'http://phylopic.org/assets/images/submissions/' /*+ UID + '.thumb.png'*/;
+  // UID_BY_NAME_URL = 'http://phylopic.org/api/a/name/search?text=';
+  // IMG_BY_UID_URL = 'http://phylopic.org/api/a/name/' /*+ UID + '/images'*/;
+  // IMG_URL = 'http://phylopic.org/assets/images/submissions/' /*+ UID + '.thumb.png'*/;
 
   // API WIKIPEDIA
   DESCRIPTION_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&prop=extracts&format=json&exsentences=5&exlimit=1&explaintext=1&formatversion=2&titles=';
@@ -32,6 +32,9 @@ export class ResearchService {
   // API REDLIST
   BASE_URL = `https://apiv3.iucnredlist.org/api/v3/`;
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
+
+  // API WITPOC
+  WITPOC_URL = 'http://api.witpoc.com/animals';
 
 
   getAnimalsByCountry(isocode: string): Observable<AnimalsByCountryAnswer> {
@@ -63,7 +66,7 @@ export class ResearchService {
     return this.http.get<object>(url);
   }
 
-  getAnimalUid(scientificName: string): Observable<any> {
+  /* getAnimalUid(scientificName: string): Observable<any> {
     return this.http.get<any>(this.UID_BY_NAME_URL + `${scientificName}`);
   }
   getAnimalImagesUid(uid: number): Observable<any> {
@@ -71,7 +74,7 @@ export class ResearchService {
   }
   getAnimalIcon(uid: number): Observable<any> {
     return this.http.get<any>(this.IMG_URL + `${uid}.thumb.png`);
-  }
+  } */
 
   getCountryFlag(isocode: string): Observable<any> {
     return this.http.get<any>(this.BASE_COUNTRY_URL + isocode);
@@ -79,5 +82,13 @@ export class ResearchService {
 
   getCountryDescription(countryName: string): Observable<any> {
     return this.http.get(this.DESCRIPTION_URL + `${countryName}`);
+  }
+
+  postAnimalImg(newAnimal: Animal) {
+    return this.http.post(this.WITPOC_URL, newAnimal);
+  }
+
+  getAnimalImageByName(name: string): Observable<Animal> {
+    return this.http.get<Animal>(this.WITPOC_URL + `/${name}`);
   }
 }
