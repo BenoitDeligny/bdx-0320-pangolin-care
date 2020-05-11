@@ -2,7 +2,7 @@
     --mainBgColor: rgba(25,25,30);
     --secondColor: rgba(240,135,35);
     --policeColor: rgba(240, 240, 240);
-    --CardsBackgroundColor: rgba(50,50,50, 0.4)
+    --CardsBackgroundColor: rgba(50,50,50, 0.4);
 }
 
 body {
