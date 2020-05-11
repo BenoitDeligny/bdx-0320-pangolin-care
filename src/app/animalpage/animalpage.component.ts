@@ -51,7 +51,7 @@ export class AnimalpageComponent implements OnInit {
 
       this.researchService.getAnimalImageByName(name).subscribe(
         (data) => {
-          this.imageUrl = data.imageUrl;
+          this.imageUrl = data[0].imageUrl;
         }
       );
     });
@@ -63,8 +63,6 @@ export class AnimalpageComponent implements OnInit {
     this.currentAnimal.imageUrl = $event;
     this.researchService.postAnimalImg(this.currentAnimal).subscribe(
       () => {
-        // image ne s'affiche
-        // name API != name class
       }
     );
   }
