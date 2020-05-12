@@ -7,6 +7,7 @@ import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 import { Country } from '../models/country-list';
 import { DescriptionAnswer } from '../models/description-answer';
 import { Animal } from '../models/animal';
+import { map, filter } from 'rxjs/operators';
 
 
 @Injectable({
@@ -21,11 +22,6 @@ export class ResearchService {
   // API RESTCOUNTRIES
   BASE_COUNTRY_URL = `https://restcountries.eu/rest/v2/alpha/`;
 
-  // API PHYLOPIC
-  // UID_BY_NAME_URL = 'http://phylopic.org/api/a/name/search?text=';
-  // IMG_BY_UID_URL = 'http://phylopic.org/api/a/name/' /*+ UID + '/images'*/;
-  // IMG_URL = 'http://phylopic.org/assets/images/submissions/' /*+ UID + '.thumb.png'*/;
-
   // API WIKIPEDIA
   DESCRIPTION_URL = 'https://en.wikipedia.org/w/api.php?action=query&origin=%2A&prop=extracts&format=json&exsentences=5&exlimit=1&explaintext=1&formatversion=2&titles=';
 
@@ -37,9 +33,13 @@ export class ResearchService {
   WITPOC_URL = 'http://api.witpoc.com/animals';
 
 
-  getAnimalsByCountry(isocode: string): Observable<AnimalsByCountryAnswer> {
+  getAnimalsByCountry(isocode: string): Observable<Animal[]> {
     const url = this.BASE_URL + `country/getspecies/${isocode}` + this.TOKEN;
-    return this.http.get<AnimalsByCountryAnswer>(url);
+    return this.http.get<AnimalsByCountryAnswer>(url).pipe(map((data: AnimalsByCountryAnswer) => {
+      return data.result.filter((animal) => {
+        return (animal.category === 'CR' || animal.category === 'EW');
+      });
+    }));
   }
 
   getAnimalDetails(scientificName: string): Observable<AnimalDetailsAnswer> {
@@ -65,16 +65,6 @@ export class ResearchService {
     const url = this.BASE_COUNTRY_URL + `${criteria}`;
     return this.http.get<object>(url);
   }
-
-  /* getAnimalUid(scientificName: string): Observable<any> {
-    return this.http.get<any>(this.UID_BY_NAME_URL + `${scientificName}`);
-  }
-  getAnimalImagesUid(uid: number): Observable<any> {
-    return this.http.get<any>(this.IMG_BY_UID_URL + `${uid}/images`);
-  }
-  getAnimalIcon(uid: number): Observable<any> {
-    return this.http.get<any>(this.IMG_URL + `${uid}.thumb.png`);
-  } */
 
   getCountryFlag(isocode: string): Observable<any> {
     return this.http.get<any>(this.BASE_COUNTRY_URL + isocode);

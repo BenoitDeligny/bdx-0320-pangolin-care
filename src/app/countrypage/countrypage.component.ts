@@ -45,19 +45,17 @@ export class CountrypageComponent implements OnInit {
       }
 
       this.researchService.getAnimalsByCountry(isocode).subscribe(
-        (animalsByCountryFromServer: AnimalsByCountryAnswer) => {
-          const results = animalsByCountryFromServer.result;
+        (animalsByCountryFromServer: Animal[]) => {
+          const results = animalsByCountryFromServer;
           for (const animal of results) {
-            if (animal.category === 'CR' || animal.category === 'EW') {
-              this.animalsByCountry.push(animal);
-              this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
-                (descriptionsFromServer: DescriptionAnswer) => {
-                  const result2 = descriptionsFromServer.result;
-                  this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
-                  this.isLoading = false;
-                }
-              );
-            }
+            this.animalsByCountry.push(animal);
+            this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
+              (descriptionsFromServer: DescriptionAnswer) => {
+                const result2 = descriptionsFromServer.result;
+                this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
+                this.isLoading = false;
+              }
+            );
           }
         });
       this.researchService.getCountryFlag(isocode).subscribe(
