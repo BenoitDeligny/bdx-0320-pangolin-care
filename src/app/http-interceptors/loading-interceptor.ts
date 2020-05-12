@@ -10,7 +10,7 @@ export class YourInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        // this.loadingService.isLoading.next(true);
+        this.loadingService.isLoading.next(true);
 
         return next.handle(req);
     }

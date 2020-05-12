@@ -54,6 +54,7 @@ export class CountrypageComponent implements OnInit {
                 (descriptionsFromServer: DescriptionAnswer) => {
                   const result2 = descriptionsFromServer.result;
                   this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
+                  this.isLoading = false;
                 }
               );
             }
