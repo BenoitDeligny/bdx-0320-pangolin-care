@@ -44,38 +44,18 @@ export class CountrypageComponent implements OnInit {
 
       this.researchService.getAnimalsByCountry(isocode).subscribe(
         (animalsByCountryFromServer: AnimalsByCountryAnswer) => {
-          const result = animalsByCountryFromServer.result;
-          for (const animal of result) {
+          const results = animalsByCountryFromServer.result;
+          for (const animal of results) {
             if (animal.category === 'CR' || animal.category === 'EW') {
-
-              this.animalsByCountry.push(animal);
-              this.researchService.getAnimalDetails(animal.scientific_name).subscribe(
-                (animalDetails) => {
-                  const nestedResult = animalDetails.result[0].main_common_name;
-
-                  this.researchService.getAnimalUid(animal.scientific_name).subscribe(
-                (animalUid) => {
-                  const animalNameUid = animalUid.result[0].canonicalName.uid;
-                  this.researchService.getAnimalImagesUid(animalNameUid).subscribe(
-                    () => {
-                      const animalImagesIud = animalUid.result[0].canonicalName.uid;
-                      this.researchService.getAnimalIcon(animalImagesIud).subscribe(
-                        (imgUrl) => {
-                          this.animalsIcons.push(imgUrl);
-                        }
-                      );
-                    }
-                  );
-                });
-                  this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
-                (descriptionsFromServer: DescriptionAnswer) => {
-                  const result2 = descriptionsFromServer.result;
-                  this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
+                 this.animalsByCountry.push(animal);
+                 this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
+                  (descriptionsFromServer: DescriptionAnswer) => {
+                    const result2 = descriptionsFromServer.result;
+                    this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
                 }
               );
-            });
+            }
           }
-        }
         });
       this.researchService.getCountryFlag(isocode).subscribe(
         (imageURL) => {
@@ -90,7 +70,7 @@ export class CountrypageComponent implements OnInit {
     );
   }
 
-  searchAnimal(name: string) {
+searchAnimal(name: string) {
     this.router.navigate(['/animals', name]);
   }
 }
