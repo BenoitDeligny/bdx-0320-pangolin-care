@@ -28,6 +28,8 @@ export class CountrypageComponent implements OnInit {
   animalDescriptions = [];
   criteria = '';
 
+  isLoading = true;
+
 
   constructor(private researchService: ResearchService, private route: ActivatedRoute, private router: Router) { }
 
@@ -47,11 +49,11 @@ export class CountrypageComponent implements OnInit {
           const results = animalsByCountryFromServer.result;
           for (const animal of results) {
             if (animal.category === 'CR' || animal.category === 'EW') {
-                 this.animalsByCountry.push(animal);
-                 this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
-                  (descriptionsFromServer: DescriptionAnswer) => {
-                    const result2 = descriptionsFromServer.result;
-                    this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
+              this.animalsByCountry.push(animal);
+              this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
+                (descriptionsFromServer: DescriptionAnswer) => {
+                  const result2 = descriptionsFromServer.result;
+                  this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
                 }
               );
             }
@@ -70,8 +72,9 @@ export class CountrypageComponent implements OnInit {
     );
   }
 
-searchAnimal(name: string) {
+  searchAnimal(name: string) {
     this.router.navigate(['/animals', name]);
   }
+
 }
 

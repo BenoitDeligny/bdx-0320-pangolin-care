@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,8 @@ import { SearchComponent } from './search/search.component';
 import { AnimalpageComponent } from './animalpage/animalpage.component';
 import { WorldMapComponent } from './world-map/world-map.component';
 import { ImgFormComponent } from './img-form/img-form.component';
+import { YourInterceptor } from './http-interceptors/loading-interceptor';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ImgFormComponent } from './img-form/img-form.component';
     SearchComponent,
     AnimalpageComponent,
     WorldMapComponent,
-    ImgFormComponent
+    ImgFormComponent,
+    LoadingComponent
 
   ],
   imports: [
@@ -34,7 +37,9 @@ import { ImgFormComponent } from './img-form/img-form.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: YourInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

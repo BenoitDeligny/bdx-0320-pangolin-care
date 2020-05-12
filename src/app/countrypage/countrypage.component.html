@@ -8,7 +8,9 @@
         </div>
     </div>
 
-    <div class="speciesContainer">
+    <pgc-loading *ngIf="isLoading"></pgc-loading>
+
+    <div class="speciesContainer" *ngIf="isLoading === false">
         <div class="specie" *ngFor="let animal of animalDescriptions" (click)="searchAnimal(animal.name)">
             <h3>{{animal.name}}</h3>
             <p class="description-text" [innerHTML]="animal.info"></p>
