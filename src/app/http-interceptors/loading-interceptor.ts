@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { LoadingService } from '../services/loading.service';
 
 @Injectable()
-export class YourInterceptor implements HttpInterceptor {
+export class LoaderInterceptor implements HttpInterceptor {
 
     constructor(private loadingService: LoadingService) {}
 
