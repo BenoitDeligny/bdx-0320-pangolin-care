@@ -15,6 +15,8 @@ import { WorldMapComponent } from './world-map/world-map.component';
 import { ImgFormComponent } from './img-form/img-form.component';
 import { YourInterceptor } from './http-interceptors/loading-interceptor';
 import { LoadingComponent } from './loading/loading.component';
+import { HttpCancelService } from './services/http-cancel.service';
+import { ManageHttpInterceptor } from './http-interceptors/cancel-http';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { LoadingComponent } from './loading/loading.component';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: YourInterceptor, multi: true},
+    HttpCancelService,
+    { provide: HTTP_INTERCEPTORS, useClass: ManageHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
