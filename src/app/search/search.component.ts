@@ -5,6 +5,8 @@ import { Country } from '../models/country-list';
 import { Description } from '../models/description';
 import { Router } from '@angular/router';
 
+import isocodes from '../models/isocodes.json';
+
 @Component({
   selector: 'pgc-search',
   templateUrl: './search.component.html',
@@ -14,7 +16,7 @@ export class SearchComponent implements OnInit {
   criteria = '';
   isHidden = false;
 
-  allCountries: Country[] = [];
+  allCountries = isocodes;
 
   animals: Animal[] = [];
   countries: Country[] = [];
@@ -23,11 +25,10 @@ export class SearchComponent implements OnInit {
 
   searchResults: Country[] = [];
 
-  constructor(private researchService: ResearchService, private router: Router) { }
+  constructor(private researchService: ResearchService, public router: Router) { }
 
   ngOnInit(): void {
-    this.researchService.getArrayOfCountries()
-      .subscribe(data => this.allCountries = data);
+
   }
 
   searchResult() {

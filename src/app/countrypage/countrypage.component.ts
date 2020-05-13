@@ -12,7 +12,7 @@ import isocodes from '../models/isocodes.json';
 @Component({
   selector: 'pgc-countrypage',
   templateUrl: './countrypage.component.html',
-  styleUrls: ['./countrypage.component.css']
+  styleUrls: ['./countrypage.component.scss']
 })
 export class CountrypageComponent implements OnInit {
   countryCompleteName = '';
@@ -27,6 +27,8 @@ export class CountrypageComponent implements OnInit {
 
   animalDescriptions = [];
   criteria = '';
+
+  isLoading = true;
 
 
   constructor(private researchService: ResearchService, private route: ActivatedRoute, private router: Router) { }
@@ -43,40 +45,19 @@ export class CountrypageComponent implements OnInit {
       }
 
       this.researchService.getAnimalsByCountry(isocode).subscribe(
-        (animalsByCountryFromServer: AnimalsByCountryAnswer) => {
-          const result = animalsByCountryFromServer.result;
-          for (const animal of result) {
-            if (animal.category === 'CR' || animal.category === 'EW') {
-
-              this.animalsByCountry.push(animal);
-
-              this.researchService.getAnimalUid(animal.scientific_name).subscribe(
-                (animalUid) => {
-                  const animalNameUid = animalUid.result[0].canonicalName.uid;
-                  this.researchService.getAnimalImagesUid(animalNameUid).subscribe(
-                    () => {
-                      const animalImagesIud = animalUid.result[0].canonicalName.uid;
-                      this.researchService.getAnimalIcon(animalImagesIud).subscribe(
-                        (imgUrl) => {
-                          this.animalsIcons.push(imgUrl);
-                        }
-                      );
-                    }
-                  );
-                });
-              this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
-                (descriptionsFromServer: DescriptionAnswer) => {
-                  const result2 = descriptionsFromServer.result;
-                  this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
-                  /* for (const description of result2) {
-                    this.animalDescriptions.push({info: description.species_id});
-                  } */
-                }
-              );
-            }
+        (animalsByCountryFromServer: Animal[]) => {
+          const results = animalsByCountryFromServer;
+          for (const animal of results) {
+            this.animalsByCountry.push(animal);
+            this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
+              (descriptionsFromServer: string) => {
+                const result2 = descriptionsFromServer;
+                this.animalDescriptions.push({ name: animal.scientific_name, info: result2});
+                this.isLoading = false;
+              }
+            );
           }
-        }
-      );
+        });
       this.researchService.getCountryFlag(isocode).subscribe(
         (imageURL) => {
           this.flagUrl = imageURL.flag;
@@ -93,5 +74,6 @@ export class CountrypageComponent implements OnInit {
   searchAnimal(name: string) {
     this.router.navigate(['/animals', name]);
   }
+
 }
 

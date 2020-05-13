@@ -1,0 +1,18 @@
+.mapContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.chartdiv {
+    margin: 5%;
+    height: 35vw;
+    width: 100%;
+}
+
+.chartdiv:hover {
+    cursor: pointer;
+}
+

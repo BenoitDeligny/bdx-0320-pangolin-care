@@ -35,7 +35,7 @@ export class WorldMapComponent implements AfterViewInit, OnDestroy {
     polygonTemplate.polygon.fillOpacity = 1;
     polygonTemplate.fill = am4core.color('#FF8F26');
     const hs = polygonTemplate.states.create('hover');
-    hs.properties.fill = am4core.color('#F0F0F0');
+    hs.properties.fill = am4core.color('#ffd9b3');
 
     // LOG testing
     polygonTemplate.events.on('hit', (country) => {

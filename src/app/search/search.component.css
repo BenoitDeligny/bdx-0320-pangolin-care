@@ -1,3 +1,19 @@
+.logo {
+    position: absolute;
+    top: 1%;
+    left: 3%;
+    height: 60px;
+    width: 60px;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.logo:focus {
+    outline: none;
+}
+
 .searchbarContainer {
     display: flex;
     justify-content: center;
@@ -64,4 +80,14 @@ label{
     color: var(--secondColor);
     font-size: 1.2vw;
     margin-right: 10px;
+}
+
+.searchbar-a{
+    color: rgba(240, 240, 240, 0.6);
+    margin-left: 25px;
+    font-style: italic;
+}
+.searchbar-a:hover{
+    color: var(--secondColor);
+    font-style: normal;
 }

@@ -2,7 +2,7 @@
     --mainBgColor: rgba(25,25,30);
     --secondColor: rgba(240,135,35);
     --policeColor: rgba(240, 240, 240);
-    --CardsBackgroundColor: rgba(50,50,50, 0.4)
+    --CardsBackgroundColor: rgba(50,50,50, 0.4);
 }
 
 body {
@@ -10,12 +10,13 @@ body {
         font-family: 'Volkhov', serif, 'Roboto', sans-serif;
 }
 
-h1, h2, h3 {
-  font-family: 'Roboto';
+h1, h2, h3, button {
+  font-family: 'Volkhov';
   color: var(--policeColor)
 }
 
-p, a, li{
+p, a, li {
+  font-family: 'Volkhov';
   color: var(--policeColor)
 }
 
@@ -28,7 +29,7 @@ h2 {
 h3 {
     font-size: 1.6vw;
 }
-p {
+p, button {
     font-size: 1.1vw;
 }
 a {

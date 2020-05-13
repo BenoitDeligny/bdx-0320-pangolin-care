@@ -1,0 +1,104 @@
+.overallContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.addImgContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animalImg img {
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.addImgButton {
+    margin-left: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--secondColor);
+    background-color: var(--CardsBackgroundColor);
+    border: 1px solid var(--secondColor);
+    border-radius: 5px;
+    transition: 200ms;
+
+    &:hover {
+        background-color: var(--secondColor);
+        color: var(--policeColor);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.animalResume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.animalResume * {
+    text-align: center;
+    margin: 15px;
+}
+
+.animalTitle * {
+    text-decoration: underline var(--secondColor);
+}
+
+.animalIcons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+    background-color: var(--CardsBackgroundColor);
+}
+.icon p {
+    margin: 2px;
+    color: var(--secondColor);
+}
+
+.icon img {
+    height: 100px;
+    width: 100px;
+}
+
+.animalDetails {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.animalDetails h3 {
+    text-decoration: underline var(--secondColor);
+}
+
+.descriptionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.animalDescription {
+    width: 80%;
+    text-align: center;
+}
+.animalDescription * {
+    margin: 5px;
+}
+
+p {
+    color: var(--policeColor);
+}

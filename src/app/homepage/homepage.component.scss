@@ -1,0 +1,77 @@
+.overallContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.websiteTitle {
+    text-decoration: underline var(--secondColor);
+}
+
+.websitePurpose {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    text-align: center;
+}
+
+.button-start {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+    color: var(--secondColor);
+    background-color: var(--CardsBackgroundColor);
+    border: 1px solid var(--secondColor);
+    border-radius: 1rem;
+    transition: 200ms;
+    margin-top: 35px;
+
+    &:hover {
+      color: var(--policeColor);
+      background-color: var(--secondColor);
+      -webkit-animation-name: shake;
+              animation-name: shake;
+      -webkit-animation-duration: 500ms;
+              animation-duration: 500ms;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+    }
+    &:focus {
+      outline: none;
+    }
+}
+
+  // Shake animation keyframes
+  @keyframes shake {
+    0%   { transform: translate(2px, 1px)   rotate(0deg);}
+    10%  { transform: translate(-1px, -2px) rotate(-1deg);}
+    20%  { transform: translate(-3px, 0px)  rotate(1deg);}
+    30%  { transform: translate(0px, 2px)   rotate(0deg);}
+    40%  { transform: translate(1px, -1px)  rotate(1deg);}
+    50%  { transform: translate(-1px, 1px)  rotate(-1deg);}
+    60%  { transform: translate(-3px, -2px) rotate(0deg);}
+    70%  { transform: translate(2px, 1px)   rotate(-1deg);}
+    80%  { transform: translate(-1px, -2px) rotate(1deg);}
+    90%  { transform: translate(2px, -1px)  rotate(0deg);}
+    100% { transform: translate(1px, -2px)  rotate(-1deg);}
+  }
+
+  @-webkit-keyframes shake {
+    0%   { -webkit-transform: translate(2px, 1px)   rotate(0deg);}
+    10%  { -webkit-transform: translate(-1px, -2px) rotate(-1deg);}
+    20%  { -webkit-transform: translate(-3px, 0px)  rotate(1deg);}
+    30%  { -webkit-transform: translate(0px, 2px)   rotate(0deg);}
+    40%  { -webkit-transform: translate(1px, -1px)  rotate(1deg);}
+    50%  { -webkit-transform: translate(-1px, 1px)  rotate(-1deg);}
+    60%  { -webkit-transform: translate(-3px, -2px) rotate(0deg);}
+    70%  { -webkit-transform: translate(2px, 1px)   rotate(-1deg);}
+    80%  { -webkit-transform: translate(-1px, -2px) rotate(1deg);}
+    90%  { -webkit-transform: translate(2px, -1px)  rotate(0deg);}
+    100% { -webkit-transform: translate(1px, -2px)  rotate(-1deg);}
+  }

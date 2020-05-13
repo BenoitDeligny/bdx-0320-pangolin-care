@@ -1,0 +1,10 @@
+<div class="darkness">
+    <div class="form">
+        <div class="box">
+            <h3 for="addImg">Choose an image</h3>
+            <input [(ngModel)]="imgUrl" type="text" name="addImg" placeholder="Link">
+            <button (click)="sendImage(imgUrl)">Add</button>
+            <button (click)="closeForm(false)">Cancel</button>
+        </div>
+    </div>
+</div>
