@@ -50,9 +50,9 @@ export class CountrypageComponent implements OnInit {
           for (const animal of results) {
             this.animalsByCountry.push(animal);
             this.researchService.getAnimalDescription(animal.scientific_name).subscribe(
-              (descriptionsFromServer: DescriptionAnswer) => {
-                const result2 = descriptionsFromServer.result;
-                this.animalDescriptions.push({ name: animal.scientific_name, info: result2[0].rationale });
+              (descriptionsFromServer: string) => {
+                const result2 = descriptionsFromServer;
+                this.animalDescriptions.push({ name: animal.scientific_name, info: result2});
                 this.isLoading = false;
               }
             );
