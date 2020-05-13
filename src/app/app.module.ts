@@ -16,6 +16,7 @@ import { ImgFormComponent } from './img-form/img-form.component';
 import { LoadingComponent } from './loading/loading.component';
 import { HttpCancelService } from './services/http-cancel.service';
 import { ManageHttpInterceptor } from './http-interceptors/cancel-http';
+import { LoaderInterceptor } from './http-interceptors/loading-interceptor';
 
 @NgModule({
   declarations: [

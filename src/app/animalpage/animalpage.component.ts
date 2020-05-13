@@ -14,7 +14,7 @@ import { Description } from '../models/description';
 })
 export class AnimalpageComponent implements OnInit {
 
-  animals: Animal[] = [];
+  animal: Animal;
   animalsDescriptions: Description[] = [];
   descriptionString = '';
   arrow: string;
@@ -31,27 +31,22 @@ export class AnimalpageComponent implements OnInit {
       const name = params.get('name');
 
       this.researchService.getAnimalDetails(name).subscribe(
-        (animaldetailsanswer: AnimalDetailsAnswer) => {
-          this.animals = animaldetailsanswer.result;
-          for (const animal of this.animals) {
-            this.arrow = animal.population_trend;
-            this.category = animal.category;
-            this.currentAnimal = animal;
-          }
+        (animaldetailsanswer: Animal) => {
+          this.animal = animaldetailsanswer;
+          this.arrow = this.animal.population_trend;
+          this.category = this.animal.category;
+          this.currentAnimal = this.animal;
         });
 
       this.researchService.getAnimalDescription(name).subscribe(
-        (animalDescription: DescriptionAnswer) => {
-          this.animalsDescriptions = animalDescription.result;
-          for (const description of this.animalsDescriptions) {
-            this.descriptionString = description.rationale;
-          }
+        (animalDescription: string) => {
+          this.descriptionString = animalDescription;
         }
       );
 
       this.researchService.getAnimalImageByName(name).subscribe(
         (data) => {
-          this.imageUrl = data[0].imageUrl;
+          this.imageUrl = data;
         }
       );
     });

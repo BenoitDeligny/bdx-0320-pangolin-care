@@ -5,9 +5,10 @@ import { AnimalsByCountryAnswer } from '../models/animal-by-country-answer';
 import { AnimalDetailsAnswer } from '../models/animaldetailsanswer';
 import { AnimalCountriesAnswer } from '../models/animal-countries-answer';
 import { Country } from '../models/country-list';
-import { DescriptionAnswer } from '../models/description-answer';
 import { Animal } from '../models/animal';
 import { map, filter } from 'rxjs/operators';
+import { Description } from '../models/description';
+import { DescriptionAnswer } from '../models/description-answer';
 
 
 @Injectable({
@@ -42,9 +43,11 @@ export class ResearchService {
     }));
   }
 
-  getAnimalDetails(scientificName: string): Observable<AnimalDetailsAnswer> {
+  getAnimalDetails(scientificName: string): Observable<Animal> {
     const url = this.BASE_URL + `species/${scientificName}` + this.TOKEN;
-    return this.http.get<AnimalDetailsAnswer>(url);
+    return this.http.get<AnimalDetailsAnswer>(url).pipe(map((data: AnimalDetailsAnswer) => {
+      return data.result[0];
+    }));
   }
 
   getAnimalCountries(criteria: string): Observable<AnimalCountriesAnswer> {
@@ -56,9 +59,11 @@ export class ResearchService {
     return this.http.get<Country[]>(this.allCountriesUrl);
   }
 
-  getAnimalDescription(criteria: string): Observable<any> {
+  getAnimalDescription(criteria: string): Observable<string> {
     const url = this.BASE_URL + `species/narrative/${criteria}` + this.TOKEN;
-    return this.http.get<any>(url);
+    return this.http.get<DescriptionAnswer>(url).pipe(map((data: DescriptionAnswer) => {
+      return data.result[0].rationale;
+    }));
   }
 
   getFlagOfCountry(criteria: string): Observable<object> {
@@ -78,7 +83,9 @@ export class ResearchService {
     return this.http.post(this.WITPOC_URL, newAnimal);
   }
 
-  getAnimalImageByName(name: string): Observable<Animal> {
-    return this.http.get<Animal>(this.WITPOC_URL + `/${name}`);
+  getAnimalImageByName(name: string): Observable<string> {
+    return this.http.get<Animal>(this.WITPOC_URL + `/${name}`).pipe(map (data => {
+      return data[0].imageUrl;
+    }));
   }
 }
