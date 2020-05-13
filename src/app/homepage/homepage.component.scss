@@ -24,12 +24,12 @@
     text-align: center;
     cursor: pointer;
     color: var(--secondColor);
-    background-color: var(--policeColor);
+    background-color: var(--CardsBackgroundColor);
     border: 1px solid var(--secondColor);
     border-radius: 1rem;
     transition: 200ms;
     margin-top: 35px;
-    
+
     &:hover {
       color: var(--policeColor);
       background-color: var(--secondColor);
@@ -46,7 +46,7 @@
       outline: none;
     }
 }
-  
+
   // Shake animation keyframes
   @keyframes shake {
     0%   { transform: translate(2px, 1px)   rotate(0deg);}
@@ -61,7 +61,7 @@
     90%  { transform: translate(2px, -1px)  rotate(0deg);}
     100% { transform: translate(1px, -2px)  rotate(-1deg);}
   }
-  
+
   @-webkit-keyframes shake {
     0%   { -webkit-transform: translate(2px, 1px)   rotate(0deg);}
     10%  { -webkit-transform: translate(-1px, -2px) rotate(-1deg);}
@@ -75,4 +75,3 @@
     90%  { -webkit-transform: translate(2px, -1px)  rotate(0deg);}
     100% { -webkit-transform: translate(1px, -2px)  rotate(-1deg);}
   }
-  
