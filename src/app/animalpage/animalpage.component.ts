@@ -66,4 +66,8 @@ export class AnimalpageComponent implements OnInit {
       }
     );
   }
+
+  onCloseForm($event: boolean) {
+    this.displayDarkness = $event;
+  }
 }

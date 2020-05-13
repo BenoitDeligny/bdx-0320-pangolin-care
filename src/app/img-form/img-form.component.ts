@@ -17,8 +17,11 @@ export class ImgFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendImage(imgUrl: string, dark: boolean) {
+  sendImage(imgUrl: string) {
     this.imageUrl.emit(imgUrl);
-    this.isDark.emit(dark);
+  }
+
+  closeForm(isDark: boolean) {
+    this.isDark.emit(isDark);
   }
 }

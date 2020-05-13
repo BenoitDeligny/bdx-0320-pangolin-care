@@ -1,4 +1,4 @@
-<pgc-img-form *ngIf="displayDarkness" (imageUrl)="onSendImg($event)"></pgc-img-form>
+<pgc-img-form *ngIf="displayDarkness" (imageUrl)="onSendImg($event)" (isDark)="onCloseForm($event)"></pgc-img-form>
 <div *ngFor="let animal of animals">
   <div class="overallContainer">
     <div class="animalImg">
