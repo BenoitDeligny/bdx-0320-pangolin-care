@@ -11,8 +11,9 @@
 }
 
 .animalImg img {
-    max-height: 400px;
-    max-width: 400px;
+    margin-top: 5%;
+    max-height: 600px;
+    max-width: 800px;
 }
 
 .addImgButton {
@@ -93,12 +94,18 @@
 
 .animalDescription {
     width: 80%;
-    text-align: center;
+    background-color: var(--CardsBackgroundColor);
+    border-radius: 5px;
 }
 .animalDescription * {
     margin: 5px;
+    text-align: center;
 }
 
-p {
-    color: var(--policeColor);
+.animalDescription h3{
+    margin-top: 1%;
+}
+
+.text-description{
+  padding: 2%;
 }
