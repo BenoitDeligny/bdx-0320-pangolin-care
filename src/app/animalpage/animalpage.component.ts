@@ -14,7 +14,7 @@ import { Description } from '../models/description';
 })
 export class AnimalpageComponent implements OnInit {
 
-  animal: Animal;
+  animal: Animal = {};
   animalsDescriptions: Description[] = [];
   descriptionString = '';
   arrow: string;
