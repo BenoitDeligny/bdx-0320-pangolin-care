@@ -31,7 +31,7 @@ export class ResearchService {
   TOKEN = `?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
 
   // API WITPOC
-  WITPOC_URL = 'http://api.witpoc.com/animals';
+  WITPOC_URL = 'https://api.witpoc.com/animals';
 
 
   getAnimalsByCountry(isocode: string): Observable<Animal[]> {
